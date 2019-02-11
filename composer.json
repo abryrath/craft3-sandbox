@@ -1,0 +1,46 @@
+{
+  "require": {
+    "craftcms/cms": "^3.0.0",
+    "vlucas/phpdotenv": "^2.4.0",
+    "unionco/craft-sync-db": "dev-master",
+    "unionco/craft-related-entry-types": "dev-master",
+    "unionco/import": "dev-master",
+    "unionco/google-services": "dev-staging"
+  },
+  "autoload": {
+    "psr-4": {
+      "modules\\": "modules/"
+    }
+  },
+  "config": {
+    "optimize-autoloader": true,
+    "platform": {
+      "php": "7.0"
+    }
+  },
+  "scripts": {
+    "post-root-package-install": [
+      "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+    ]
+  },
+  "repositories": [
+    {
+      "type": "path",
+      "url": "./import",
+      "symlink": true
+    },
+    {
+        "type": "path",
+        "url": "./craftsyncdb"
+    },
+    {
+        "type": "path",
+        "url": "./relatedentrytypes"
+    },
+    {
+        "type": "path",
+        "url": "../autobell-com/googleservices"
+    }
+  ],
+  "minimum-stability": "dev"
+}
