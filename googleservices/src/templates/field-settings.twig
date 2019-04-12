@@ -1,0 +1,11 @@
+{% import "_includes/forms" as forms %}
+
+{{ forms.textField({
+    label: "Map Center Override",
+    instructions: "Override the map center for this field. Falls back to plugin settings.",
+    size: 100,
+    id: 'mapCenter',
+    name: 'mapCenter',
+    value: field and field.mapCenter ? field.mapCenter,
+    type: 'text'
+}) }}

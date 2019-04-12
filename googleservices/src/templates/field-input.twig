@@ -1,0 +1,28 @@
+{% import "_includes/forms" as forms %}
+
+<div class="field" id="{{ id }}">
+    <div class="input ltr GoogleMapField--address-field">
+        <input class="text GoogleMapField--address fullwidth" type="text" name="googlePlace[name]" id="{{ id }}" autocomplete="off" value="{{ value.placeId is not null ? value.placeId }}">
+    </div>
+</div>
+
+<input type="hidden" name="googlePlace[placeId]" value="{{value.placeId}}">
+<input type="hidden" name="googlePlace[latitude]" value="{{value.latitude}}">
+<input type="hidden" name="googlePlace[longitude]" value="{{value.longitude}}">
+<input type="hidden" name="googlePlace[formattedAddress]" value="{{value.formattedAddress}}">
+<input type="hidden" name="googlePlace[formattedPhone]" value="{{value.formattedPhone}}">
+<input type="hidden" name="googlePlace[rating]" value="{{value.rating}}">
+<input type="hidden" name="googlePlace[postalCode]" value="{{value.postalCode}}">
+<input type="hidden" name="googlePlace[city]" value="{{value.city}}">
+<input type="hidden" name="googlePlace[state]" value="{{value.state}}">
+<input type="hidden" name="googlePlace[reviewsJson]" value="{{value.reviewsJson}}">
+
+<div class="GoogleMapField">
+    <div class="GoogleMapField-card">
+        <h3>Place Search</h3>
+        <div class="GoogleMapField-container">
+            <input class="GoogleMapField-input autocomplete" id="autocomplete" type="text" placeholder="Enter a location">
+        </div>
+    </div>
+    <div google-map class="GoogleMap" id="GoogleMap"></div>
+</div>

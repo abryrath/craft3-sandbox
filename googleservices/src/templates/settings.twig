@@ -1,0 +1,19 @@
+{% import '_includes/forms' as forms %}
+
+{{ forms.textField({
+    label: 'Google Maps API Key',
+    instructions: 'Maps, Geocoder, and Places APIs must be enabled',
+    size: 100,
+    name: 'googleMapsApiKey',
+    value: settings.googleMapsApiKey,
+    required: true
+}) }}
+
+{{ forms.textField({
+    label: 'Default Map Center',
+    instructions: 'City, State',
+    name: 'mapCenter',
+    value: settings.mapCenter,
+    size: 50,
+    required: true,
+}) }}

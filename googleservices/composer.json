@@ -1,0 +1,43 @@
+{
+    "name": "unionco/google-services",
+    "description": "Google Places API Integration",
+    "type": "craft-plugin",
+    "keywords": [
+        "craft",
+        "cms",
+        "craftcms",
+        "craft-plugin",
+        "google services"
+    ],
+    "support": {
+        "docs": "https://github.com/unionco/google-services/blob/master/README.md",
+        "issues": "https://github.com/unionco/google-services/issues"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Abry Rath <abry.rath@union.co>",
+            "homepage": "https://github.com/unionco"
+        }
+    ],
+    "require": {
+        "craftcms/cms": "^3.0.0-RC1"
+    },
+    "autoload": {
+        "psr-4": {
+          "unionco\\googleservices\\": "src/"
+        }
+    },
+    "extra": {
+        "name": "Google Services",
+        "handle": "google-services",
+        "hasCpSettings": false,
+        "hasCpSection": false,
+        "changelogUrl": "https://raw.githubusercontent.com/unionco/google-services/master/CHANGELOG.md",
+        "class": "unionco\\googleservices\\GoogleServices"
+    },
+    "require-dev": {
+        "squizlabs/php_codesniffer": "^3.4",
+        "vimeo/psalm": "^3.0"
+    }
+}

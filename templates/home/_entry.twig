@@ -1,9 +1,13 @@
 <html>
 <body>
-    {% if entry.test %}
-        {{ dump(entry.test.one) }}
-    {% else %}
-        entry.test is falsey
-    {% endif %}
+    {% set geolocationService = geolocation.geolocation %}
+    {{ dump(geolocationService.getProvider()) }}
+    {% set myLocation = geolocationService.getCoords() %}
+    {{ dump(myLocation) }}
+    {# {% set location = unioncoGooglePlaces.closestTo(myLocation).withinRange(10.0).all %}
+    {# {% set simpleMapLocations = simpleMap.closestTo(myLocation) %} #}
+    {# {{ dump(location) }}
+    {{ dump(simpleMapLocations.all) }} #}
+
 </body>
 </html>

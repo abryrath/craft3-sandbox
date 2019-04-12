@@ -1,4 +1,7 @@
 <?php
+
+use unionco\app\AppModule;
+
 /**
  * Yii Application Config
  *
@@ -19,7 +22,7 @@
 
 return [
     'modules' => [
-        'my-module' => \modules\Module::class,
+        'app' => AppModule::class,
     ],
-    //'bootstrap' => ['my-module'],
+    'bootstrap' => ['app'],
 ];
