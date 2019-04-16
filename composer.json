@@ -1,18 +1,17 @@
 {
     "require": {
-        "craftcms/cms": "3.1.14",
+        "craftcms/cms": "3.1.22",
         "vlucas/phpdotenv": "^2.4.0",
-        "unionco/craft-related-entry-types": "dev-master",
         "unionco/import": "dev-master",
         "unionco/google-services": "@dev",
         "league/csv": "^8",
         "unionco/craft-sync-db": "@dev",
-        "ether/simplemap": "3.3.5",
-        "craftcms/commerce": "*",
-        "unionco/commerce-payflow": "@dev",
+        "ether/simplemap": "3.4.11",
+        "craftcms/commerce": "2.1.2",
         "unionco/syncdb": "@dev",
         "unionco/core": "^3.13",
-        "unionco/geolocation": "@dev"
+        "unionco/geolocation": "@dev",
+        "unionco/craft-related-entry-types": "@dev"
     },
     "autoload": {
         "psr-4": {
@@ -45,7 +44,7 @@
         },
         {
             "type": "path",
-            "url": "./relatedentrytypes"
+            "url": "../../Library/relatedentrytypes"
         },
         {
             "type": "path",
@@ -65,7 +64,7 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "require-dev": {
-        "vimeo/psalm": "3.0.17",
-        "squizlabs/php_codesniffer": "^3.0@dev"
+        "vimeo/psalm": "^3.2",
+        "squizlabs/php_codesniffer": "^3.4"
     }
 }

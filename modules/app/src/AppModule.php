@@ -2,8 +2,10 @@
 
 namespace unionco\app;
 
+use Craft;
 use yii\base\Event;
 use yii\base\Module;
+use yii\console\Application as ConsoleApplication;
 use unionco\app\services\MyProvider;
 use unionco\geolocation\services\Geolocation;
 use unionco\geolocation\events\RegisterProvidersEvent;
@@ -15,8 +17,10 @@ class AppModule extends Module
 
     public function __construct($id, $parent = null, array $config = [])
     {
-        static::setInstance($this);
+        Craft::setAlias('app', $this->getBasePath());
+        $this->controllerNamespace = 'unionco\app\controllers';
 
+        static::setInstance($this);
         parent::__construct($id, $parent, $config);
     }
 
@@ -24,8 +28,12 @@ class AppModule extends Module
      * @return void
      */
     public function init() {
-        parent::init();
+    parent::init();
         self::$instance = $this;
+
+        if (Craft::$app instanceof ConsoleApplication) {
+            $this->controllerNamespace = 'unionco\app\console\controllers';
+        }
 
         Event::on(
             Geolocation::class,

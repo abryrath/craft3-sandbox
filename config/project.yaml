@@ -47,7 +47,7 @@ commerce:
           uriFormat: 'shop/products/{slug}'
       skuFormat: ''
       titleFormat: '{product.title}'
-dateModified: 1555095523
+dateModified: 1555415929
 email:
   fromEmail: abry.rath@Union.co
   fromName: Sandbox
@@ -55,6 +55,8 @@ email:
 fieldGroups:
   59d31bcd-b077-4966-a85f-5e915c054a7c:
     name: Common
+  928479c4-35b5-4539-a506-eb8e7f62f3be:
+    name: EntryTypes
 fields:
   7612361e-2859-4585-9f99-acfcee5cf7f8:
     contentColumnType: text
@@ -94,10 +96,34 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: ether\simplemap\fields\MapField
+  cf1fb615-6026-445b-964e-6fed41e4a117:
+    name: 'Entry Types'
+    handle: entryTypes
+    instructions: ''
+    searchable: true
+    translationMethod: site
+    translationKeyFormat: null
+    type: unionco\relatedentrytypes\fields\RelatedEntryType
+    settings:
+      sections:
+        - 'section:ce0b57ee-6dff-4d80-aa5a-d8381ba9323f'
+      entryTypes:
+        - '6'
+        - '7'
+      sources:
+        - 'section:ce0b57ee-6dff-4d80-aa5a-d8381ba9323f'
+      source: null
+      targetSiteId: null
+      viewMode: null
+      limit: ''
+      selectionLabel: ''
+      localizeRelations: false
+    contentColumnType: string
+    fieldGroup: 928479c4-35b5-4539-a506-eb8e7f62f3be
 plugins:
   commerce:
     edition: lite
-    enabled: true
+    enabled: false
     schemaVersion: 2.1.02
   commerce-payflow:
     edition: standard
@@ -123,11 +149,11 @@ plugins:
           value: ipstack
   google-services:
     edition: standard
-    enabled: true
+    enabled: false
     schemaVersion: 0.0.1
   import:
     edition: standard
-    enabled: true
+    enabled: false
     schemaVersion: 0.0.1
   related-entry-types:
     edition: standard
@@ -135,7 +161,7 @@ plugins:
     schemaVersion: 0.0.1
   simplemap:
     edition: standard
-    enabled: true
+    enabled: false
     schemaVersion: 3.0.0
     settings:
       apiKey: AIzaSyDEdH_mOHQGM5zr1DoqnwUOxmN9B_HR3Rc
@@ -212,6 +238,47 @@ sections:
         template: home/_entry
         uriFormat: __home__
     type: single
+  ce0b57ee-6dff-4d80-aa5a-d8381ba9323f:
+    enableVersioning: true
+    entryTypes:
+      26bb00d6-9836-4aa3-951c-b865a774468b:
+        handle: contentDetail
+        hasTitleField: true
+        name: 'Content Detail'
+        sortOrder: 2
+        titleFormat: ''
+        titleLabel: Title
+      4849c6bf-6640-45f4-b843-0a182180e6c6:
+        handle: faq
+        hasTitleField: true
+        name: FAQ
+        sortOrder: 4
+        titleFormat: ''
+        titleLabel: Title
+      78be31ea-f23e-49fa-98e6-f23f0f7a5cdf:
+        handle: blog
+        hasTitleField: true
+        name: Blog
+        sortOrder: 3
+        titleFormat: ''
+        titleLabel: Title
+      a6f9e7a1-c59b-4490-9bc4-933799fb2960:
+        handle: twoColumn
+        hasTitleField: true
+        name: 'Two Column'
+        sortOrder: 5
+        titleFormat: ''
+        titleLabel: Title
+    handle: pages
+    name: Pages
+    propagateEntries: true
+    siteSettings:
+      8c671faa-294d-42c3-b5ca-2e12065870df:
+        enabledByDefault: true
+        hasUrls: true
+        template: ''
+        uriFormat: 'pages/{slug}'
+    type: channel
 siteGroups:
   2c4afbfc-22ff-4aba-a8c9-a2f6896526a9:
     name: Sandbox
@@ -226,10 +293,10 @@ sites:
     siteGroup: 2c4afbfc-22ff-4aba-a8c9-a2f6896526a9
     sortOrder: 1
 system:
-  edition: solo
+  edition: pro
   live: true
   name: Sandbox
-  schemaVersion: 3.1.25
+  schemaVersion: 3.1.26
   timeZone: America/Los_Angeles
 users:
   allowPublicRegistration: false

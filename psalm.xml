@@ -13,8 +13,8 @@
         <directory name="relatedentrytypes" /> -->
         <ignoreFiles>
             <directory name="vendor" />
-            <directory name="geolocation/vendor" />
-            <directory name="geolocation/tests/" />
+            <!-- <directory name="geolocation/vendor" />
+            <directory name="geolocation/tests/" /> -->
             <directory name="googleservices/vendor/" />
             <directory name="craftsyncdb/vendor/" />
             <directory name="syncdb/vendor/" />

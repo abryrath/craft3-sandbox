@@ -22,7 +22,7 @@ use unionco\app\AppModule;
 
 return [
     'modules' => [
-        'app' => AppModule::class,
+        //'app' => AppModule::class,
     ],
-    'bootstrap' => ['app'],
+    'bootstrap' => [], //['app'],
 ];
