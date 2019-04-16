@@ -47,7 +47,7 @@ commerce:
           uriFormat: 'shop/products/{slug}'
       skuFormat: ''
       titleFormat: '{product.title}'
-dateModified: 1555415929
+dateModified: 1555420650
 email:
   fromEmail: abry.rath@Union.co
   fromName: Sandbox
@@ -96,21 +96,24 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: ether\simplemap\fields\MapField
-  cf1fb615-6026-445b-964e-6fed41e4a117:
+  83681ac1-cb74-47ed-b9c2-e3791fb2dac6:
     name: 'Entry Types'
     handle: entryTypes
     instructions: ''
     searchable: true
     translationMethod: site
     translationKeyFormat: null
-    type: unionco\relatedentrytypes\fields\RelatedEntryType
+    type: unionco\relatedentrytypes\fields\RelatedEntryTypesField
     settings:
       sections:
+        - 'section:3634776b-6b68-4e15-96a9-f0f3f42e1951'
         - 'section:ce0b57ee-6dff-4d80-aa5a-d8381ba9323f'
       entryTypes:
+        - '3'
         - '6'
         - '7'
       sources:
+        - 'section:3634776b-6b68-4e15-96a9-f0f3f42e1951'
         - 'section:ce0b57ee-6dff-4d80-aa5a-d8381ba9323f'
       source: null
       targetSiteId: null
@@ -222,12 +225,22 @@ sections:
     enableVersioning: true
     entryTypes:
       38e3c2db-4415-41eb-b05c-e51501b140c5:
+        name: Home
         handle: home
         hasTitleField: true
-        name: Home
-        sortOrder: 1
-        titleFormat: null
         titleLabel: Title
+        titleFormat: ''
+        sortOrder: 1
+        fieldLayouts:
+          d441a8eb-66a4-469a-82fe-d9e10ebfb476:
+            tabs:
+              -
+                name: EntryTypes
+                sortOrder: 1
+                fields:
+                  83681ac1-cb74-47ed-b9c2-e3791fb2dac6:
+                    required: false
+                    sortOrder: 1
     handle: home
     name: Home
     propagateEntries: true
