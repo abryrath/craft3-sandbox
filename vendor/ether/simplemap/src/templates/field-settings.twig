@@ -1,0 +1,47 @@
+{% import '_includes/forms' as forms %}
+
+{{ forms.field({
+	label: 'Initial Location'|t('simplemap'),
+	instructions: 'The initial location and zoom that will show in the map field'|t('simplemap'),
+}, map) }}
+
+{{ forms.lightswitchField({
+	label: 'Hide Search'|t('simplemap'),
+	instructions: 'Hide the location search field'|t('simplemap'),
+	id: 'hideSearch',
+	name: 'hideSearch',
+	on: field.hideSearch
+}) }}
+
+{{ forms.lightswitchField({
+	label: 'Hide Map'|t('simplemap'),
+	instructions: 'Hide the map'|t('simplemap'),
+	id: 'hideMap',
+	name: 'hideMap',
+	on: field.hideMap
+}) }}
+
+{{ forms.lightswitchField({
+	label: 'Hide Address'|t('simplemap'),
+	instructions: 'Hide the address fields'|t('simplemap'),
+	id: 'hideAddress',
+	name: 'hideAddress',
+	on: field.hideAddress
+}) }}
+
+{{ forms.lightswitchField({
+	label: 'Show Latitude / Longitude'|t('simplemap'),
+	instructions: 'Show the latitude / longitude fields'|t('simplemap'),
+	id: 'showLatLng',
+	name: 'showLatLng',
+	on: field.showLatLng
+}) }}
+
+{{ forms.selectField({
+	label: 'Preferred Country'|t('simplemap'),
+	instructions: 'When searching for a location, results in this country will take precedence'|t('simplemap'),
+	id: 'country',
+	name: 'country',
+	options: countries,
+	value: field.country,
+}) }}

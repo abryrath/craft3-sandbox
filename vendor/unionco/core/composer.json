@@ -1,0 +1,35 @@
+{
+    "name": "unionco/core",
+    "description": "UNION.co Plugin",
+    "type": "craft-module",
+    "keywords": [
+        "craft",
+        "cms",
+        "craftcms",
+        "craft-module",
+        "union"
+    ],
+    "support": {
+        "docs": "http://union.co",
+        "issues": "http://union.co"
+    },
+    "minimum-stability": "beta",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "UNION",
+            "homepage": "http://union.co"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "union\\core\\": "src/"
+        },
+        "files": [
+            "src/helpers/functions.php"
+        ]
+    },
+    "require": {
+        "php": ">=7.0.0"
+    }
+}
