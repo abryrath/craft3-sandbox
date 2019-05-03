@@ -5,13 +5,14 @@
         "unionco/import": "dev-master",
         "unionco/google-services": "@dev",
         "league/csv": "^8",
-        "unionco/craft-sync-db": "@dev",
         "ether/simplemap": "3.4.11",
         "craftcms/commerce": "2.1.2",
-        "unionco/syncdb": "@dev",
         "unionco/core": "^3.13",
         "unionco/geolocation": "@dev",
-        "unionco/craft-related-entry-types": "@dev"
+        "unionco/craft-related-entry-types": "@dev",
+        "unionco/craft-sync-db": "@dev",
+        "unionco/syncdb": "@dev",
+        "monolog/monolog": "^1.24"
     },
     "autoload": {
         "psr-4": {
@@ -36,11 +37,12 @@
         },
         {
             "type": "path",
-            "url": "./craftsyncdb"
+            "url": "../../Library/craftsyncdb",
+            "symlink": true
         },
         {
             "type": "path",
-            "url": "./syncdb"
+            "url": "../../Library/syncdb"
         },
         {
             "type": "path",

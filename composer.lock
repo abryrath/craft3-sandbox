@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "839350c7d970cf437371f2339769e518",
+    "content-hash": "32a0e2befca9290fe4496c6e57c19138",
     "packages": [
         {
             "name": "cebe/markdown",
@@ -1842,6 +1842,84 @@
             "time": "2019-02-07T18:01:35+00:00"
         },
         {
+            "name": "monolog/monolog",
+            "version": "1.24.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Seldaek/monolog.git",
+                "reference": "bfc9ebb28f97e7a24c45bdc3f0ff482e47bb0266"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/bfc9ebb28f97e7a24c45bdc3f0ff482e47bb0266",
+                "reference": "bfc9ebb28f97e7a24c45bdc3f0ff482e47bb0266",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0",
+                "psr/log": "~1.0"
+            },
+            "provide": {
+                "psr/log-implementation": "1.0.0"
+            },
+            "require-dev": {
+                "aws/aws-sdk-php": "^2.4.9 || ^3.0",
+                "doctrine/couchdb": "~1.0@dev",
+                "graylog2/gelf-php": "~1.0",
+                "jakub-onderka/php-parallel-lint": "0.9",
+                "php-amqplib/php-amqplib": "~2.4",
+                "php-console/php-console": "^3.1.3",
+                "phpunit/phpunit": "~4.5",
+                "phpunit/phpunit-mock-objects": "2.3.0",
+                "ruflin/elastica": ">=0.90 <3.0",
+                "sentry/sentry": "^0.13",
+                "swiftmailer/swiftmailer": "^5.3|^6.0"
+            },
+            "suggest": {
+                "aws/aws-sdk-php": "Allow sending log messages to AWS services like DynamoDB",
+                "doctrine/couchdb": "Allow sending log messages to a CouchDB server",
+                "ext-amqp": "Allow sending log messages to an AMQP server (1.0+ required)",
+                "ext-mongo": "Allow sending log messages to a MongoDB server",
+                "graylog2/gelf-php": "Allow sending log messages to a GrayLog2 server",
+                "mongodb/mongodb": "Allow sending log messages to a MongoDB server via PHP Driver",
+                "php-amqplib/php-amqplib": "Allow sending log messages to an AMQP server using php-amqplib",
+                "php-console/php-console": "Allow sending log messages to Google Chrome",
+                "rollbar/rollbar": "Allow sending log messages to Rollbar",
+                "ruflin/elastica": "Allow sending log messages to an Elastic Search server",
+                "sentry/sentry": "Allow sending log messages to a Sentry server"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Monolog\\": "src/Monolog"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jordi Boggiano",
+                    "email": "j.boggiano@seld.be",
+                    "homepage": "http://seld.be"
+                }
+            ],
+            "description": "Sends your logs to files, sockets, inboxes, databases and various web services",
+            "homepage": "http://github.com/Seldaek/monolog",
+            "keywords": [
+                "log",
+                "logging",
+                "psr-3"
+            ],
+            "time": "2018-11-05T09:00:11+00:00"
+        },
+        {
             "name": "paragonie/random_compat",
             "version": "v9.99.99",
             "source": {
@@ -2487,16 +2565,16 @@
         },
         {
             "name": "swiftmailer/swiftmailer",
-            "version": "v6.2.0",
+            "version": "v6.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/swiftmailer/swiftmailer.git",
-                "reference": "6fa3232ff9d3f8237c0fae4b7ff05e1baa4cd707"
+                "reference": "5397cd05b0a0f7937c47b0adcb4c60e5ab936b6a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/6fa3232ff9d3f8237c0fae4b7ff05e1baa4cd707",
-                "reference": "6fa3232ff9d3f8237c0fae4b7ff05e1baa4cd707",
+                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/5397cd05b0a0f7937c47b0adcb4c60e5ab936b6a",
+                "reference": "5397cd05b0a0f7937c47b0adcb4c60e5ab936b6a",
                 "shasum": ""
             },
             "require": {
@@ -2505,6 +2583,10 @@
                 "symfony/polyfill-iconv": "^1.0",
                 "symfony/polyfill-intl-idn": "^1.10",
                 "symfony/polyfill-mbstring": "^1.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "~0.9.1",
+                "symfony/phpunit-bridge": "^3.4.19|^4.1.8"
             },
             "suggest": {
                 "ext-intl": "Needed to support internationalized email addresses",
@@ -2521,6 +2603,7 @@
                     "lib/swift_required.php"
                 ]
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -2540,20 +2623,20 @@
                 "mail",
                 "mailer"
             ],
-            "time": "2019-03-10T07:52:41+00:00"
+            "time": "2019-04-21T09:21:45+00:00"
         },
         {
             "name": "symfony/console",
-            "version": "v4.2.5",
+            "version": "v4.2.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
-                "reference": "24206aff3efe6962593297e57ef697ebb220e384"
+                "reference": "e2840bb38bddad7a0feaf85931e38fdcffdb2f81"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/console/zipball/24206aff3efe6962593297e57ef697ebb220e384",
-                "reference": "24206aff3efe6962593297e57ef697ebb220e384",
+                "url": "https://api.github.com/repos/symfony/console/zipball/e2840bb38bddad7a0feaf85931e38fdcffdb2f81",
+                "reference": "e2840bb38bddad7a0feaf85931e38fdcffdb2f81",
                 "shasum": ""
             },
             "require": {
@@ -2567,6 +2650,14 @@
             },
             "provide": {
                 "psr/log-implementation": "1.0"
+            },
+            "require-dev": {
+                "psr/log": "~1.0",
+                "symfony/config": "~3.4|~4.0",
+                "symfony/dependency-injection": "~3.4|~4.0",
+                "symfony/event-dispatcher": "~3.4|~4.0",
+                "symfony/lock": "~3.4|~4.0",
+                "symfony/process": "~3.4|~4.0"
             },
             "suggest": {
                 "psr/log": "For using the console logger",
@@ -2588,6 +2679,7 @@
                     "/Tests/"
                 ]
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -2603,7 +2695,7 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "https://symfony.com",
-            "time": "2019-04-01T07:32:59+00:00"
+            "time": "2019-04-08T14:23:48+00:00"
         },
         {
             "name": "symfony/contracts",
@@ -2675,7 +2767,7 @@
         },
         {
             "name": "symfony/filesystem",
-            "version": "v4.2.5",
+            "version": "v4.2.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/filesystem.git",
@@ -2705,6 +2797,7 @@
                     "/Tests/"
                 ]
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -2724,16 +2817,16 @@
         },
         {
             "name": "symfony/finder",
-            "version": "v4.2.5",
+            "version": "v4.2.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/finder.git",
-                "reference": "267b7002c1b70ea80db0833c3afe05f0fbde580a"
+                "reference": "e45135658bd6c14b61850bf131c4f09a55133f69"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/finder/zipball/267b7002c1b70ea80db0833c3afe05f0fbde580a",
-                "reference": "267b7002c1b70ea80db0833c3afe05f0fbde580a",
+                "url": "https://api.github.com/repos/symfony/finder/zipball/e45135658bd6c14b61850bf131c4f09a55133f69",
+                "reference": "e45135658bd6c14b61850bf131c4f09a55133f69",
                 "shasum": ""
             },
             "require": {
@@ -2753,6 +2846,7 @@
                     "/Tests/"
                 ]
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -2768,7 +2862,7 @@
             ],
             "description": "Symfony Finder Component",
             "homepage": "https://symfony.com",
-            "time": "2019-02-23T15:42:05+00:00"
+            "time": "2019-04-06T13:51:08+00:00"
         },
         {
             "name": "symfony/polyfill-ctype",
@@ -3061,16 +3155,16 @@
         },
         {
             "name": "symfony/process",
-            "version": "v4.2.5",
+            "version": "v4.2.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/process.git",
-                "reference": "1e6cbb41dadcaf29e0db034d6ad0d039a9df06e6"
+                "reference": "8cf39fb4ccff793340c258ee7760fd40bfe745fe"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/process/zipball/1e6cbb41dadcaf29e0db034d6ad0d039a9df06e6",
-                "reference": "1e6cbb41dadcaf29e0db034d6ad0d039a9df06e6",
+                "url": "https://api.github.com/repos/symfony/process/zipball/8cf39fb4ccff793340c258ee7760fd40bfe745fe",
+                "reference": "8cf39fb4ccff793340c258ee7760fd40bfe745fe",
                 "shasum": ""
             },
             "require": {
@@ -3090,6 +3184,7 @@
                     "/Tests/"
                 ]
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -3105,11 +3200,11 @@
             ],
             "description": "Symfony Process Component",
             "homepage": "https://symfony.com",
-            "time": "2019-03-10T20:07:02+00:00"
+            "time": "2019-04-10T16:20:36+00:00"
         },
         {
             "name": "symfony/yaml",
-            "version": "v4.2.5",
+            "version": "v4.2.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/yaml.git",
@@ -3128,6 +3223,9 @@
             "conflict": {
                 "symfony/console": "<3.4"
             },
+            "require-dev": {
+                "symfony/console": "~3.4|~4.0"
+            },
             "suggest": {
                 "symfony/console": "For validating YAML files using the lint command"
             },
@@ -3145,6 +3243,7 @@
                     "/Tests/"
                 ]
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -3210,16 +3309,16 @@
         },
         {
             "name": "twig/twig",
-            "version": "v2.7.4",
+            "version": "v2.9.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/twigphp/Twig.git",
-                "reference": "ed9c49220e09bfaeb1ba4d48077c08a7b09908dd"
+                "reference": "82a1c055c8ed4c4705023bfd0405f3c74db6e3ae"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/ed9c49220e09bfaeb1ba4d48077c08a7b09908dd",
-                "reference": "ed9c49220e09bfaeb1ba4d48077c08a7b09908dd",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/82a1c055c8ed4c4705023bfd0405f3c74db6e3ae",
+                "reference": "82a1c055c8ed4c4705023bfd0405f3c74db6e3ae",
                 "shasum": ""
             },
             "require": {
@@ -3227,10 +3326,15 @@
                 "symfony/polyfill-ctype": "^1.8",
                 "symfony/polyfill-mbstring": "^1.3"
             },
+            "require-dev": {
+                "psr/container": "^1.0",
+                "symfony/debug": "^2.7",
+                "symfony/phpunit-bridge": "^3.4.19|^4.1.8"
+            },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.7-dev"
+                    "dev-master": "2.9-dev"
                 }
             },
             "autoload": {
@@ -3241,6 +3345,7 @@
                     "Twig\\": "src/"
                 }
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "BSD-3-Clause"
             ],
@@ -3267,7 +3372,7 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2019-03-23T14:28:58+00:00"
+            "time": "2019-04-28T06:57:38+00:00"
         },
         {
             "name": "unionco/core",
@@ -3322,15 +3427,20 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/unionco/related-entry-types.git",
-                "reference": "f6d347bd8776dea4f0409b6836f3fffa2044e7ae"
+                "reference": "65a032801cc47b343c0adf936c7c29bb276f88ea"
             },
             "dist": {
-                "type": "path",
-                "url": "https://api.github.com/repos/unionco/related-entry-types/zipball/f6d347bd8776dea4f0409b6836f3fffa2044e7ae",
-                "reference": "f6d347bd8776dea4f0409b6836f3fffa2044e7ae"
+                "type": "zip",
+                "url": "https://api.github.com/repos/unionco/related-entry-types/zipball/65a032801cc47b343c0adf936c7c29bb276f88ea",
+                "reference": "65a032801cc47b343c0adf936c7c29bb276f88ea",
+                "shasum": ""
             },
             "require": {
                 "craftcms/cms": "^3.0.0-RC1"
+            },
+            "require-dev": {
+                "squizlabs/php_codesniffer": "^3.4",
+                "vimeo/psalm": "^3.2"
             },
             "type": "craft-plugin",
             "extra": {
@@ -3346,6 +3456,7 @@
                     "unionco\\relatedentrytypes\\": "src/"
                 }
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -3357,34 +3468,28 @@
             ],
             "description": "A Craft Field type that allows more control over related entries.",
             "keywords": [
+                "Craft",
                 "cms",
-                "craft",
                 "craft-plugin",
                 "craftcms",
                 "related entry types"
             ],
-            "support": {
-                "docs": "https://github.com/unionco/related-entry-types/blob/master/README.md",
-                "issues": "https://github.com/unionco/related-entry-types/issues"
-            }
+            "time": "2019-04-18T13:06:56+00:00"
         },
         {
             "name": "unionco/craft-sync-db",
-            "version": "v0.3.3",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/unionco/craft-sync-db.git",
-                "reference": "43254dde182b39fd2558518be5192c08b3fcb98d"
-            },
+            "version": "dev-master",
             "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/unionco/craft-sync-db/zipball/43254dde182b39fd2558518be5192c08b3fcb98d",
-                "reference": "43254dde182b39fd2558518be5192c08b3fcb98d",
-                "shasum": ""
+                "type": "path",
+                "url": "../../Library/craftsyncdb",
+                "reference": "f9f3a52801e85c953dfb0b6b1f6960d73e0c591a"
             },
             "require": {
                 "craftcms/cms": "^3.0.0-RC1",
-                "unionco/syncdb": "0.3.0"
+                "unionco/syncdb": "@dev"
+            },
+            "require-dev": {
+                "vimeo/psalm": "^3.0"
             },
             "type": "craft-plugin",
             "extra": {
@@ -3396,14 +3501,13 @@
                 "components": {
                     "sync": "unionco\\craftsyncdb\\services\\Sync"
                 },
-                "class": "unionco\\craftsyncdb\\SyncDb"
+                "class": "unionco\\craftsyncdb\\SyncDbPlugin"
             },
             "autoload": {
                 "psr-4": {
                     "unionco\\craftsyncdb\\": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -3415,20 +3519,28 @@
             ],
             "description": "Craft 3 plugin to sync database across environments",
             "keywords": [
-                "Craft",
                 "cms",
+                "craft",
                 "craft-plugin",
                 "craft-sync-db",
                 "craftcms"
             ],
-            "time": "2019-01-28T12:57:38+00:00"
+            "support": {
+                "docs": "https://github.com/unionco/craft-sync-db",
+                "issues": "https://github.com/unionco/craft-sync-db"
+            }
         },
         {
             "name": "unionco/geolocation",
             "version": "9999999-dev",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/unionco/craft-geolocation.git",
+                "reference": "4870644977a91af2a5e2997e59fceb86af213763"
+            },
             "dist": {
                 "type": "path",
-                "url": "../../Library/geolocation",
+                "url": "https://api.github.com/repos/unionco/craft-geolocation/zipball/4870644977a91af2a5e2997e59fceb86af213763",
                 "reference": "4870644977a91af2a5e2997e59fceb86af213763"
             },
             "require": {
@@ -3584,20 +3696,24 @@
         },
         {
             "name": "unionco/syncdb",
-            "version": "v0.3.0",
+            "version": "v0.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/unionco/syncdb.git",
-                "reference": "f5a526f1b7aa4e88707b598cb6debb5af8353ae7"
+                "reference": "b03a2eae1fcf726bd22d469bbf9f10b68a387460"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/unionco/syncdb/zipball/f5a526f1b7aa4e88707b598cb6debb5af8353ae7",
-                "reference": "f5a526f1b7aa4e88707b598cb6debb5af8353ae7",
+                "url": "https://api.github.com/repos/unionco/syncdb/zipball/b03a2eae1fcf726bd22d469bbf9f10b68a387460",
+                "reference": "b03a2eae1fcf726bd22d469bbf9f10b68a387460",
                 "shasum": ""
             },
             "require": {
+                "symfony/console": "^4.2",
                 "vlucas/phpdotenv": "^2.5"
+            },
+            "require-dev": {
+                "vimeo/psalm": "^3.0"
             },
             "type": "library",
             "autoload": {
@@ -3616,7 +3732,7 @@
                 }
             ],
             "description": "Library to assist with syncing databases across different environments",
-            "time": "2019-01-10T15:35:20+00:00"
+            "time": "2019-02-18T14:00:50+00:00"
         },
         {
             "name": "vlucas/phpdotenv",
@@ -3874,22 +3990,27 @@
         },
         {
             "name": "yiisoft/yii2-debug",
-            "version": "2.1.1",
+            "version": "2.1.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-debug.git",
-                "reference": "632929c0682c6470ec838cf15d14c22418e6d07f"
+                "reference": "27e36a045069e6e195a28cd4314b6e125ddcc0f9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-debug/zipball/632929c0682c6470ec838cf15d14c22418e6d07f",
-                "reference": "632929c0682c6470ec838cf15d14c22418e6d07f",
+                "url": "https://api.github.com/repos/yiisoft/yii2-debug/zipball/27e36a045069e6e195a28cd4314b6e125ddcc0f9",
+                "reference": "27e36a045069e6e195a28cd4314b6e125ddcc0f9",
                 "shasum": ""
             },
             "require": {
                 "ext-mbstring": "*",
                 "php": ">=5.4",
                 "yiisoft/yii2": "~2.0.13"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "<7",
+                "yiisoft/yii2-coding-standards": "~2.0",
+                "yiisoft/yii2-swiftmailer": "*"
             },
             "type": "yii2-extension",
             "extra": {
@@ -3902,6 +4023,7 @@
                     "yii\\debug\\": "src"
                 }
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "BSD-3-Clause"
             ],
@@ -3921,7 +4043,7 @@
                 "debugger",
                 "yii2"
             ],
-            "time": "2019-03-30T20:33:53+00:00"
+            "time": "2019-04-30T15:21:32+00:00"
         },
         {
             "name": "yiisoft/yii2-queue",
@@ -4774,16 +4896,16 @@
         },
         {
             "name": "phpdocumentor/reflection-docblock",
-            "version": "4.3.0",
+            "version": "4.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpDocumentor/ReflectionDocBlock.git",
-                "reference": "94fd0001232e47129dd3504189fa1c7225010d08"
+                "reference": "bdd9f737ebc2a01c06ea7ff4308ec6697db9b53c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpDocumentor/ReflectionDocBlock/zipball/94fd0001232e47129dd3504189fa1c7225010d08",
-                "reference": "94fd0001232e47129dd3504189fa1c7225010d08",
+                "url": "https://api.github.com/repos/phpDocumentor/ReflectionDocBlock/zipball/bdd9f737ebc2a01c06ea7ff4308ec6697db9b53c",
+                "reference": "bdd9f737ebc2a01c06ea7ff4308ec6697db9b53c",
                 "shasum": ""
             },
             "require": {
@@ -4821,7 +4943,7 @@
                 }
             ],
             "description": "With this component, a library can provide support for annotations via DocBlocks or otherwise retrieve information that is embedded in a DocBlock.",
-            "time": "2017-11-30T07:14:17+00:00"
+            "time": "2019-04-30T17:48:53+00:00"
         },
         {
             "name": "phpdocumentor/type-resolver",
@@ -4984,16 +5106,16 @@
         },
         {
             "name": "vimeo/psalm",
-            "version": "3.2.7",
+            "version": "3.2.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/vimeo/psalm.git",
-                "reference": "6e010d9db95275725e5ad6409c387eb173091f72"
+                "reference": "b9bece4cbcb3f342c8412618f73ca02db98064e8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/vimeo/psalm/zipball/6e010d9db95275725e5ad6409c387eb173091f72",
-                "reference": "6e010d9db95275725e5ad6409c387eb173091f72",
+                "url": "https://api.github.com/repos/vimeo/psalm/zipball/b9bece4cbcb3f342c8412618f73ca02db98064e8",
+                "reference": "b9bece4cbcb3f342c8412618f73ca02db98064e8",
                 "shasum": ""
             },
             "require": {
@@ -5019,7 +5141,7 @@
             "require-dev": {
                 "bamarni/composer-bin-plugin": "^1.2",
                 "phpunit/phpunit": "^6.0 || ^7.0",
-                "psalm/plugin-phpunit": "^0.5.1",
+                "psalm/plugin-phpunit": "^0.5.5",
                 "squizlabs/php_codesniffer": "3.4.0"
             },
             "suggest": {
@@ -5060,7 +5182,7 @@
                 "inspection",
                 "php"
             ],
-            "time": "2019-04-12T15:32:35+00:00"
+            "time": "2019-04-29T16:19:51+00:00"
         },
         {
             "name": "webmozart/assert",
@@ -5212,10 +5334,10 @@
     "stability-flags": {
         "unionco/import": 20,
         "unionco/google-services": 20,
-        "unionco/craft-sync-db": 20,
-        "unionco/syncdb": 20,
         "unionco/geolocation": 20,
-        "unionco/craft-related-entry-types": 20
+        "unionco/craft-related-entry-types": 20,
+        "unionco/craft-sync-db": 20,
+        "unionco/syncdb": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
