@@ -54,6 +54,7 @@ final class Versions
   'psr/simple-cache' => '1.0.1@408d5eafb83c57f6365a3ca330ff23aa4a5fa39b',
   'ralouphie/getallheaders' => '2.0.5@5601c8a83fbba7ef674a7369456d12f1e0d0eafa',
   'sabberworm/php-css-parser' => '8.1.0@850cbbcbe7fbb155387a151ea562897a67e242ef',
+  'scrivo/highlight.php' => 'v9.15.6.1@00cf4aa63dd5c214660f628d3082ab231db50f48',
   'seld/cli-prompt' => '1.0.3@a19a7376a4689d4d94cab66ab4f3c816019ba8dd',
   'seld/jsonlint' => '1.7.1@d15f59a67ff805a44c50ea0516d2341740f81a38',
   'seld/phar-utils' => '1.0.1@7009b5139491975ef6486545a39f3e6dad5ac30a',
@@ -73,11 +74,11 @@ final class Versions
   'twig/twig' => 'v2.9.0@82a1c055c8ed4c4705023bfd0405f3c74db6e3ae',
   'unionco/core' => '3.13.18@aa1a4ea602036d0feecba31319b56cb088cb17da',
   'unionco/craft-related-entry-types' => 'dev-master@65a032801cc47b343c0adf936c7c29bb276f88ea',
-  'unionco/craft-sync-db' => 'dev-master@f9f3a52801e85c953dfb0b6b1f6960d73e0c591a',
+  'unionco/craft-sync-db' => 'dev-master@fda52c0aa7e09b5a1ce5e5b688b353c30049d84e',
   'unionco/geolocation' => '9999999-dev@4870644977a91af2a5e2997e59fceb86af213763',
   'unionco/google-services' => 'dev-master@af62b37157b57c6941e150266af255074a0843a6',
   'unionco/import' => 'dev-master@f1fc8a8b0eafe27f973e0bcdab0a319a42aea5cb',
-  'unionco/syncdb' => 'v0.4.1@b03a2eae1fcf726bd22d469bbf9f10b68a387460',
+  'unionco/syncdb' => 'dev-master@7bd563f3011b9637297f0aa6e3883810186d50a6',
   'vlucas/phpdotenv' => 'v2.6.1@2a7dcf7e3e02dc5e701004e51a6f304b713107d5',
   'yii2tech/ar-softdelete' => '1.0.3@3e29cb1865a7df66de42f6f888b99d2797a80204',
   'yiisoft/yii2' => '2.0.17@b56159228c3b4990e38cf41ddd69af27ab015bea',
@@ -107,7 +108,7 @@ final class Versions
   'webmozart/assert' => '1.4.0@83e253c8e0be5b0257b881e1827274667c5c17a9',
   'webmozart/glob' => '4.1.0@3cbf63d4973cf9d780b93d2da8eec7e4a9e63bbe',
   'webmozart/path-util' => '2.3.0@d939f7edc24c9a1bb9c0dee5cb05d8e859490725',
-  '__root__' => '9999999-dev@d27347c68f6ebd299f1dbc38fe29cf9a12a866f2',
+  '__root__' => '9999999-dev@1e5e32fafde915d609ea3b8209c5c9239181427e',
 );
 
     private function __construct()

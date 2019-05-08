@@ -98,6 +98,24 @@ return array (
     'hasCpSettings' => true,
     'hasCpSection' => false,
   ),
+  'unionco/craft-related-entry-types' => 
+  array (
+    'class' => 'unionco\\relatedentrytypes\\RelatedEntryTypesPlugin',
+    'basePath' => $vendorDir . '/unionco/craft-related-entry-types/src',
+    'handle' => 'related-entry-types',
+    'aliases' => 
+    array (
+      '@unionco/relatedentrytypes' => $vendorDir . '/unionco/craft-related-entry-types/src',
+    ),
+    'name' => 'Related Entry Types',
+    'version' => 'dev-master',
+    'description' => 'A Craft Field type that allows more control over related entries.',
+    'developer' => 'Abry Rath <abry.rath@union.co>',
+    'developerUrl' => 'https://github.com/unionco',
+    'changelogUrl' => 'https://raw.githubusercontent.com/unionco/related-entry-types/master/CHANGELOG.md',
+    'hasCpSettings' => false,
+    'hasCpSection' => false,
+  ),
   'unionco/craft-sync-db' => 
   array (
     'class' => 'unionco\\craftsyncdb\\SyncDbPlugin',
@@ -120,23 +138,5 @@ return array (
     array (
       'sync' => 'unionco\\craftsyncdb\\services\\Sync',
     ),
-  ),
-  'unionco/craft-related-entry-types' => 
-  array (
-    'class' => 'unionco\\relatedentrytypes\\RelatedEntryTypesPlugin',
-    'basePath' => $vendorDir . '/unionco/craft-related-entry-types/src',
-    'handle' => 'related-entry-types',
-    'aliases' => 
-    array (
-      '@unionco/relatedentrytypes' => $vendorDir . '/unionco/craft-related-entry-types/src',
-    ),
-    'name' => 'Related Entry Types',
-    'version' => 'dev-master',
-    'description' => 'A Craft Field type that allows more control over related entries.',
-    'developer' => 'Abry Rath <abry.rath@union.co>',
-    'developerUrl' => 'https://github.com/unionco',
-    'changelogUrl' => 'https://raw.githubusercontent.com/unionco/related-entry-types/master/CHANGELOG.md',
-    'hasCpSettings' => false,
-    'hasCpSection' => false,
   ),
 );

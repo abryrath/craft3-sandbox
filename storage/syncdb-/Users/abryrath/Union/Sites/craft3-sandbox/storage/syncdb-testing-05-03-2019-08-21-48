@@ -1,0 +1,6 @@
+[2019-05-03 08:21:50] sync.NOTICE: Starting database sync [] []
+[2019-05-03 08:21:50] sync.INFO: Beginning remote dump [] []
+[2019-05-03 08:21:52] sync.INFO: Task remote dump completed in 1.98 seconds [] []
+[2019-05-03 08:21:52] sync.INFO: Beginning remote download [] []
+[2019-05-03 08:21:53] sync.INFO: Task remote download completed in 1.53 seconds [] []
+[2019-05-03 08:21:56] sync.NOTICE: Database sync complete [] []

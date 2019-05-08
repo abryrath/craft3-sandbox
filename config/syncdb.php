@@ -12,12 +12,12 @@ use unionco\craftsyncdb\services\CpService;
 return [
     'remotes' => [
         'production' => [
-            'username' => 'user',
-            'host' => 'example.com',
-            'root' => '/path/to/project/',
-            'backupDirectory' => '/path/to/project/storage/backups/databases/',
+            'username' => 'abry',
+            'host' => 'abryrath.com',
+            'root' => '/home/abry/Sites/craft3-sandbox/',
+            'backupDirectory' => '/home/abry/Sites/craft3-sandbox/storage/backups/databases/',
             'port' => 22,
-            'phpPath' => '/usr/local/bin/php',
+            'phpPath' => '/usr/bin/php',
             'mysqlDumpPath' => '/usr/bin/mysqldump',
             'environment' => CpService::ENV_PRODUCTION,
             'verbosity' => Output::VERBOSITY_DEBUG,

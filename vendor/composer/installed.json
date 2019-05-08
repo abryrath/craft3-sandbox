@@ -3259,6 +3259,74 @@
         ]
     },
     {
+        "name": "scrivo/highlight.php",
+        "version": "v9.15.6.1",
+        "version_normalized": "9.15.6.1",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/scrivo/highlight.php.git",
+            "reference": "00cf4aa63dd5c214660f628d3082ab231db50f48"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/scrivo/highlight.php/zipball/00cf4aa63dd5c214660f628d3082ab231db50f48",
+            "reference": "00cf4aa63dd5c214660f628d3082ab231db50f48",
+            "shasum": ""
+        },
+        "require": {
+            "ext-json": "*",
+            "ext-mbstring": "*"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "^4.8|^5.7",
+            "symfony/finder": "^2.8"
+        },
+        "suggest": {
+            "ext-dom": "Needed to make use of the features in the utilities namespace"
+        },
+        "time": "2019-03-31T21:09:11+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Highlight\\": "",
+                "HighlightUtilities\\": ""
+            },
+            "files": [
+                "HighlightUtilities/functions.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Geert Bergman",
+                "homepage": "http://www.scrivo.org/",
+                "role": "Project Author"
+            },
+            {
+                "name": "Vladimir Jimenez",
+                "homepage": "https://allejo.io",
+                "role": "Contributor"
+            },
+            {
+                "name": "Martin Folkers",
+                "homepage": "https://twobrain.io",
+                "role": "Contributor"
+            }
+        ],
+        "description": "Server side syntax highlighter that supports 185 languages. It's a PHP port of highlight.js",
+        "keywords": [
+            "code",
+            "highlight",
+            "highlight.js",
+            "highlight.php",
+            "syntax"
+        ]
+    },
+    {
         "name": "seld/cli-prompt",
         "version": "1.0.3",
         "version_normalized": "1.0.3.0",
@@ -4409,11 +4477,13 @@
         "version_normalized": "9999999-dev",
         "dist": {
             "type": "path",
-            "url": "../../Library/craftsyncdb",
-            "reference": "f9f3a52801e85c953dfb0b6b1f6960d73e0c591a"
+            "url": "../../Library/craft-sync-db",
+            "reference": "fda52c0aa7e09b5a1ce5e5b688b353c30049d84e"
         },
         "require": {
             "craftcms/cms": "^3.0.0-RC1",
+            "monolog/monolog": "^1.24",
+            "scrivo/highlight.php": "v9.15.6.1",
             "unionco/syncdb": "@dev"
         },
         "require-dev": {
@@ -4631,18 +4701,12 @@
     },
     {
         "name": "unionco/syncdb",
-        "version": "v0.4.1",
-        "version_normalized": "0.4.1.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/unionco/syncdb.git",
-            "reference": "b03a2eae1fcf726bd22d469bbf9f10b68a387460"
-        },
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
         "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/unionco/syncdb/zipball/b03a2eae1fcf726bd22d469bbf9f10b68a387460",
-            "reference": "b03a2eae1fcf726bd22d469bbf9f10b68a387460",
-            "shasum": ""
+            "type": "path",
+            "url": "../../Library/syncdb",
+            "reference": "7bd563f3011b9637297f0aa6e3883810186d50a6"
         },
         "require": {
             "symfony/console": "^4.2",
@@ -4651,7 +4715,6 @@
         "require-dev": {
             "vimeo/psalm": "^3.0"
         },
-        "time": "2019-02-18T14:00:50+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -4659,7 +4722,6 @@
                 "unionco\\syncdb\\": "src/"
             }
         },
-        "notification-url": "https://packagist.org/downloads/",
         "license": [
             "MIT"
         ],
