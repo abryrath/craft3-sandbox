@@ -12,7 +12,8 @@
         "scrivo/highlight.php": "v9.15.6.1",
         "unionco/syncdb": "@dev",
         "unionco/craft-sync-db": "@dev",
-        "unionco/craft-related-entry-types": "@dev"
+        "unionco/craft-related-entry-types": "@dev",
+        "tsingsun/yii2-graphql": "^0.11.4"
     },
     "autoload": {
         "psr-4": {
