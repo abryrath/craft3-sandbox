@@ -10,10 +10,9 @@
         "unionco/core": "^3.13",
         "monolog/monolog": "^1.24",
         "scrivo/highlight.php": "v9.15.6.1",
-        "unionco/syncdb": "@dev",
-        "unionco/craft-sync-db": "@dev",
-        "unionco/craft-related-entry-types": "@dev",
-        "tsingsun/yii2-graphql": "^0.11.4"
+        "tsingsun/yii2-graphql": "^0.11.4",
+        "unionco/craft-sync-db": "^0.5.1",
+        "unionco/craft-related-entry-types": "^0.1.4"
     },
     "autoload": {
         "psr-4": {

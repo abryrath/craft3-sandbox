@@ -4,44 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "18256bb94c95cc67ad39a346a19b78ed",
+    "content-hash": "f71980a9d89a662cacb49e5a70b2730d",
     "packages": [
-        {
-            "name": "abryrath/syncdb",
-            "version": "0.1.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/abryrath/syncdb.git",
-                "reference": "1055287b2ab4cbc48056eda33adc43354c0c9511"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/abryrath/syncdb/zipball/1055287b2ab4cbc48056eda33adc43354c0c9511",
-                "reference": "1055287b2ab4cbc48056eda33adc43354c0c9511",
-                "shasum": ""
-            },
-            "require": {
-                "vlucas/phpdotenv": "^2.5"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "abryrath\\syncdb\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Abry Rath",
-                    "email": "abryrath@gmail.com"
-                }
-            ],
-            "description": "Library to assist with syncing databases across different environments",
-            "time": "2018-12-19T01:35:29+00:00"
-        },
         {
             "name": "cebe/markdown",
             "version": "1.2.1",
@@ -3557,11 +3521,17 @@
         },
         {
             "name": "unionco/craft-related-entry-types",
-            "version": "9999999-dev",
-            "dist": {
-                "type": "path",
-                "url": "../../Library/relatedentrytypes",
+            "version": "v0.1.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/unionco/related-entry-types.git",
                 "reference": "467b160b34bc0ea864b089f49a3e4d24b0424845"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/unionco/related-entry-types/zipball/467b160b34bc0ea864b089f49a3e4d24b0424845",
+                "reference": "467b160b34bc0ea864b089f49a3e4d24b0424845",
+                "shasum": ""
             },
             "require": {
                 "craftcms/cms": "^3.0.0-RC1"
@@ -3584,6 +3554,7 @@
                     "unionco\\relatedentrytypes\\": "src/"
                 }
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -3595,50 +3566,52 @@
             ],
             "description": "A Craft Field type that allows more control over related entries.",
             "keywords": [
+                "Craft",
                 "cms",
-                "craft",
                 "craft-plugin",
                 "craftcms",
                 "related entry types"
             ],
-            "support": {
-                "docs": "https://github.com/unionco/related-entry-types/blob/master/README.md",
-                "issues": "https://github.com/unionco/related-entry-types/issues"
-            }
+            "time": "2019-05-09T19:29:53+00:00"
         },
         {
             "name": "unionco/craft-sync-db",
-            "version": "0.1.1",
+            "version": "v0.5.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/unionco/craft-sync-db.git",
-                "reference": "4f77e909696c85a9c00e79eea7095c171887b678"
+                "reference": "ddd4c29d533669c7dcb62928e7aeb359a3c636e9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/unionco/craft-sync-db/zipball/4f77e909696c85a9c00e79eea7095c171887b678",
-                "reference": "4f77e909696c85a9c00e79eea7095c171887b678",
+                "url": "https://api.github.com/repos/unionco/craft-sync-db/zipball/ddd4c29d533669c7dcb62928e7aeb359a3c636e9",
+                "reference": "ddd4c29d533669c7dcb62928e7aeb359a3c636e9",
                 "shasum": ""
             },
             "require": {
-                "abryrath/syncdb": "^0.1.0",
-                "craftcms/cms": "^3.0.0-RC1"
+                "craftcms/cms": "^3.0.0-RC1",
+                "monolog/monolog": "^1.24",
+                "scrivo/highlight.php": "v9.15.6.1",
+                "unionco/syncdb": "^v0.5.0"
+            },
+            "require-dev": {
+                "vimeo/psalm": "^3.0"
             },
             "type": "craft-plugin",
             "extra": {
-                "name": "craft-sync-db",
-                "handle": "craft-sync-db",
-                "hasCpSettings": true,
-                "hasCpSection": true,
+                "name": "SyncDb",
+                "handle": "sync-db",
+                "hasCpSettings": false,
+                "hasCpSection": false,
                 "changelogUrl": "???",
                 "components": {
-                    "sync": "abryrath\\craftsyncdb\\services\\Sync"
+                    "sync": "unionco\\craftsyncdb\\services\\Sync"
                 },
-                "class": "abryrath\\craftsyncdb\\Craftsyncdb"
+                "class": "unionco\\craftsyncdb\\SyncDbPlugin"
             },
             "autoload": {
                 "psr-4": {
-                    "abryrath\\craftsyncdb\\": "src/"
+                    "unionco\\craftsyncdb\\": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -3648,7 +3621,7 @@
             "authors": [
                 {
                     "name": "Abry Rath<abryrath@gmail.com>",
-                    "homepage": "https://github.com/abryrath"
+                    "homepage": "https://github.com/unionco"
                 }
             ],
             "description": "Craft 3 plugin to sync database across environments",
@@ -3659,7 +3632,7 @@
                 "craft-sync-db",
                 "craftcms"
             ],
-            "time": "2018-12-19T01:54:50+00:00"
+            "time": "2019-05-08T12:49:45+00:00"
         },
         {
             "name": "unionco/google-services",
@@ -3768,11 +3741,17 @@
         },
         {
             "name": "unionco/syncdb",
-            "version": "dev-master",
-            "dist": {
-                "type": "path",
-                "url": "../../Library/syncdb",
+            "version": "v0.5.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/unionco/syncdb.git",
                 "reference": "7bd563f3011b9637297f0aa6e3883810186d50a6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/unionco/syncdb/zipball/7bd563f3011b9637297f0aa6e3883810186d50a6",
+                "reference": "7bd563f3011b9637297f0aa6e3883810186d50a6",
+                "shasum": ""
             },
             "require": {
                 "symfony/console": "^4.2",
@@ -3787,6 +3766,7 @@
                     "unionco\\syncdb\\": "src/"
                 }
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -3796,7 +3776,8 @@
                     "email": "unionco@gmail.com"
                 }
             ],
-            "description": "Library to assist with syncing databases across different environments"
+            "description": "Library to assist with syncing databases across different environments",
+            "time": "2019-05-03T14:09:01+00:00"
         },
         {
             "name": "vlucas/phpdotenv",
@@ -5438,10 +5419,7 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "unionco/import": 20,
-        "unionco/google-services": 20,
-        "unionco/syncdb": 20,
-        "unionco/craft-sync-db": 20,
-        "unionco/craft-related-entry-types": 20
+        "unionco/google-services": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
