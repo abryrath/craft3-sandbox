@@ -122,19 +122,9 @@ final class TemplateWrapper
         return $this->template->getSourceContext();
     }
 
-    public function getTemplateName(): string
+    public function getTemplatename(): string
     {
         return $this->template->getTemplateName();
-    }
-
-    /**
-     * @internal
-     *
-     * @return Template
-     */
-    public function unwrap()
-    {
-        return $this->template;
     }
 }
 

@@ -47,7 +47,7 @@ commerce:
           uriFormat: 'shop/products/{slug}'
       skuFormat: ''
       titleFormat: '{product.title}'
-dateModified: 1556815313
+dateModified: 1558007945
 email:
   fromEmail: abry.rath@Union.co
   fromName: Sandbox
@@ -106,15 +106,14 @@ fields:
     type: unionco\relatedentrytypes\fields\RelatedEntryTypesField
     settings:
       sections:
-        - 'section:3634776b-6b68-4e15-96a9-f0f3f42e1951'
-        - 'section:ce0b57ee-6dff-4d80-aa5a-d8381ba9323f'
+        - 'section:3beefca8-6a9f-4ca0-9e00-c673cf6cd138'
+        - 'section:452e7866-2c9e-40ae-8467-88a339b65857'
       entryTypes:
-        - '3'
-        - '6'
-        - '7'
+        - '2'
+        - '5'
       sources:
-        - 'section:3634776b-6b68-4e15-96a9-f0f3f42e1951'
-        - 'section:ce0b57ee-6dff-4d80-aa5a-d8381ba9323f'
+        - 'section:3beefca8-6a9f-4ca0-9e00-c673cf6cd138'
+        - 'section:452e7866-2c9e-40ae-8467-88a339b65857'
       source: null
       targetSiteId: null
       viewMode: null
@@ -123,6 +122,90 @@ fields:
       localizeRelations: false
     contentColumnType: string
     fieldGroup: 928479c4-35b5-4539-a506-eb8e7f62f3be
+  055788a4-5c1d-47ff-8d5e-4d360bd9b9cc:
+    name: Locations
+    handle: locations
+    instructions: ''
+    searchable: true
+    translationMethod: site
+    translationKeyFormat: null
+    type: craft\fields\Matrix
+    settings:
+      minBlocks: ''
+      maxBlocks: ''
+      contentTable: '{{%matrixcontent_locations}}'
+      localizeBlocks: false
+    contentColumnType: string
+    fieldGroup: 59d31bcd-b077-4966-a85f-5e915c054a7c
+matrixBlockTypes:
+  e0b1fb64-74cd-4999-a54c-49fa52922e79:
+    field: 055788a4-5c1d-47ff-8d5e-4d360bd9b9cc
+    name: testBlock
+    handle: testblock
+    sortOrder: 1
+    fields:
+      9d4201b1-f4ab-410d-9c3d-977e027251e4:
+        name: testField
+        handle: testfield
+        instructions: ''
+        searchable: true
+        translationMethod: site
+        translationKeyFormat: null
+        type: unionco\relatedentrytypes\fields\RelatedEntryTypesField
+        settings:
+          sections: null
+          entryTypes:
+            - '2'
+            - '3'
+            - '6'
+          sources:
+            - 'section:3beefca8-6a9f-4ca0-9e00-c673cf6cd138'
+            - 'section:452e7866-2c9e-40ae-8467-88a339b65857'
+          source: null
+          targetSiteId: null
+          viewMode: null
+          limit: ''
+          selectionLabel: ''
+          localizeRelations: false
+        contentColumnType: string
+        fieldGroup: null
+      5e48e042-5937-471c-b36c-43e6292b5a07:
+        name: testField2
+        handle: testfield2
+        instructions: ''
+        searchable: true
+        translationMethod: site
+        translationKeyFormat: null
+        type: unionco\relatedentrytypes\fields\RelatedEntryTypesField
+        settings:
+          sections: null
+          entryTypes:
+            - '2'
+            - '3'
+            - '5'
+          sources:
+            - 'section:452e7866-2c9e-40ae-8467-88a339b65857'
+          source: null
+          targetSiteId: null
+          viewMode: null
+          limit: ''
+          selectionLabel: ''
+          localizeRelations: false
+        contentColumnType: string
+        fieldGroup: null
+    fieldLayouts:
+      446d4b9f-05b2-4d14-83c5-439a07ccf776:
+        tabs:
+          -
+            name: Content
+            sortOrder: 1
+            fields:
+              9d4201b1-f4ab-410d-9c3d-977e027251e4:
+                required: false
+                sortOrder: 1
+              5e48e042-5937-471c-b36c-43e6292b5a07:
+                required: false
+                sortOrder: 2
 plugins:
   commerce:
     edition: lite
@@ -232,7 +315,7 @@ sections:
         titleFormat: ''
         sortOrder: 1
         fieldLayouts:
-          d441a8eb-66a4-469a-82fe-d9e10ebfb476:
+          5a4a80a9-5fa2-4e9a-b9e5-746694e5390b:
             tabs:
               -
                 name: EntryTypes
@@ -292,6 +375,67 @@ sections:
         template: ''
         uriFormat: 'pages/{slug}'
     type: channel
+  3beefca8-6a9f-4ca0-9e00-c673cf6cd138:
+    name: Locations
+    handle: locations
+    type: channel
+    enableVersioning: true
+    propagateEntries: true
+    siteSettings:
+      8c671faa-294d-42c3-b5ca-2e12065870df:
+        enabledByDefault: true
+        hasUrls: true
+        uriFormat: 'locations/{slug}'
+        template: ''
+    entryTypes:
+      3425efc9-9938-4b0f-aba5-6510591b5076:
+        name: LocationsTrest
+        handle: locations
+        hasTitleField: true
+        titleLabel: Title
+        titleFormat: ''
+        sortOrder: 1
+      abf888ee-973f-4edf-a9f6-675a1d6dc92c:
+        name: Test
+        handle: test
+        hasTitleField: true
+        titleLabel: Title
+        titleFormat: ''
+        sortOrder: 2
+  452e7866-2c9e-40ae-8467-88a339b65857:
+    name: Pages
+    handle: pages
+    type: channel
+    enableVersioning: true
+    propagateEntries: true
+    siteSettings:
+      8c671faa-294d-42c3-b5ca-2e12065870df:
+        enabledByDefault: true
+        hasUrls: true
+        uriFormat: 'pages/{slug}'
+        template: ''
+    entryTypes:
+      6133e354-ef54-4736-bc28-cca2702bb9d3:
+        name: Pages
+        handle: pages
+        hasTitleField: true
+        titleLabel: Title
+        titleFormat: null
+        sortOrder: 1
+      897f759e-efeb-4c51-9a9d-46be7e0ea7fb:
+        name: Page1
+        handle: page1
+        hasTitleField: true
+        titleLabel: Title
+        titleFormat: ''
+        sortOrder: 2
+      d314c974-cb9b-4d11-99c2-dbe5930529b6:
+        name: Page2
+        handle: page2
+        hasTitleField: true
+        titleLabel: Title
+        titleFormat: ''
+        sortOrder: 3
 siteGroups:
   2c4afbfc-22ff-4aba-a8c9-a2f6896526a9:
     name: Sandbox
@@ -309,7 +453,7 @@ system:
   edition: pro
   live: true
   name: Sandbox
-  schemaVersion: 3.1.26
+  schemaVersion: 3.1.28
   timeZone: America/Los_Angeles
 users:
   allowPublicRegistration: false

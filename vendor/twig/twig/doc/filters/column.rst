@@ -7,7 +7,7 @@
 The ``column`` filter returns the values from a single column in the input
 array.
 
-.. code-block:: twig
+.. code-block:: jinja
 
     {% set items = [{ 'fruit' : 'apple'}, {'fruit' : 'orange' }] %}
 

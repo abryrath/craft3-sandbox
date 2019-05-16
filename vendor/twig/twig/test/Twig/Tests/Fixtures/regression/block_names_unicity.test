@@ -3,14 +3,14 @@ Block names are unique per template
 --TEMPLATE--
 {% extends 'layout' %}
 {% block content -%}
-    {% apply title -%}
+    {% filter title -%}
         second
-    {% endapply %}
+    {% endfilter %}
 {% endblock %}
 --TEMPLATE(layout)--
-{% apply title -%}
+{% filter title -%}
     first
-{% endapply %}
+{% endfilter %}
 {% block content %}{% endblock %}
 --DATA--
 return []

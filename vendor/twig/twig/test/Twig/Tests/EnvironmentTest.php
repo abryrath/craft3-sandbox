@@ -506,6 +506,11 @@ class Twig_Tests_EnvironmentTest_ExtensionWithoutRuntime extends AbstractExtensi
             new TwigFunction('from_runtime_string', 'Twig_Tests_EnvironmentTest_Runtime::fromRuntime'),
         ];
     }
+
+    public function getName()
+    {
+        return 'from_runtime';
+    }
 }
 
 class Twig_Tests_EnvironmentTest_Runtime

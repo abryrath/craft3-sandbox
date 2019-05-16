@@ -1,6 +1,6 @@
 {
     "require": {
-        "craftcms/cms": "3.1.22",
+        "craftcms/cms": "3.1.27",
         "vlucas/phpdotenv": "^2.4.0",
         "unionco/import": "dev-master",
         "unionco/google-services": "@dev",
@@ -8,12 +8,11 @@
         "ether/simplemap": "3.4.11",
         "craftcms/commerce": "2.1.2",
         "unionco/core": "^3.13",
-        "unionco/geolocation": "@dev",
-        "unionco/craft-related-entry-types": "@dev",
         "monolog/monolog": "^1.24",
         "scrivo/highlight.php": "v9.15.6.1",
         "unionco/syncdb": "@dev",
-        "unionco/craft-sync-db": "@dev"
+        "unionco/craft-sync-db": "@dev",
+        "unionco/craft-related-entry-types": "@dev"
     },
     "autoload": {
         "psr-4": {

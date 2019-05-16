@@ -79,24 +79,27 @@ return array (
     'developerEmail' => 'support@craftcms.com',
     'documentationUrl' => 'https://docs.craftcms.com/commerce/v2/',
   ),
-  'unionco/geolocation' => 
+  'unionco/craft-sync-db' => 
   array (
-    'class' => 'unionco\\geolocation\\GeolocationPlugin',
-    'basePath' => $vendorDir . '/unionco/geolocation/src',
-    'handle' => 'geolocation',
+    'class' => 'abryrath\\craftsyncdb\\Craftsyncdb',
+    'basePath' => $vendorDir . '/unionco/craft-sync-db/src',
+    'handle' => 'craft-sync-db',
     'aliases' => 
     array (
-      '@unionco/geolocation' => $vendorDir . '/unionco/geolocation/src',
+      '@abryrath/craftsyncdb' => $vendorDir . '/unionco/craft-sync-db/src',
     ),
-    'name' => 'Geolocation',
-    'version' => '9999999-dev',
-    'description' => 'Geolocation helper for Craft',
-    'developer' => 'Abry Rath <abry.rath@union.co>',
+    'name' => 'craft-sync-db',
+    'version' => '0.1.1',
+    'description' => 'Craft 3 plugin to sync database across environments',
+    'developer' => 'Abry Rath<abryrath@gmail.com>',
     'developerUrl' => 'https://github.com/abryrath',
-    'documentationUrl' => 'https://github.com/abryrath/geolocation/blob/master/README.md',
-    'changelogUrl' => 'https://raw.githubusercontent.com/abryrath/geolocation/master/CHANGELOG.md',
+    'changelogUrl' => '???',
     'hasCpSettings' => true,
-    'hasCpSection' => false,
+    'hasCpSection' => true,
+    'components' => 
+    array (
+      'sync' => 'abryrath\\craftsyncdb\\services\\Sync',
+    ),
   ),
   'unionco/craft-related-entry-types' => 
   array (
@@ -108,35 +111,13 @@ return array (
       '@unionco/relatedentrytypes' => $vendorDir . '/unionco/craft-related-entry-types/src',
     ),
     'name' => 'Related Entry Types',
-    'version' => 'dev-master',
+    'version' => '9999999-dev',
     'description' => 'A Craft Field type that allows more control over related entries.',
     'developer' => 'Abry Rath <abry.rath@union.co>',
     'developerUrl' => 'https://github.com/unionco',
+    'documentationUrl' => 'https://github.com/unionco/related-entry-types/blob/master/README.md',
     'changelogUrl' => 'https://raw.githubusercontent.com/unionco/related-entry-types/master/CHANGELOG.md',
     'hasCpSettings' => false,
     'hasCpSection' => false,
-  ),
-  'unionco/craft-sync-db' => 
-  array (
-    'class' => 'unionco\\craftsyncdb\\SyncDbPlugin',
-    'basePath' => $vendorDir . '/unionco/craft-sync-db/src',
-    'handle' => 'sync-db',
-    'aliases' => 
-    array (
-      '@unionco/craftsyncdb' => $vendorDir . '/unionco/craft-sync-db/src',
-    ),
-    'name' => 'SyncDb',
-    'version' => 'dev-master',
-    'description' => 'Craft 3 plugin to sync database across environments',
-    'developer' => 'Abry Rath<abryrath@gmail.com>',
-    'developerUrl' => 'https://github.com/unionco',
-    'documentationUrl' => 'https://github.com/unionco/craft-sync-db',
-    'changelogUrl' => '???',
-    'hasCpSettings' => false,
-    'hasCpSection' => false,
-    'components' => 
-    array (
-      'sync' => 'unionco\\craftsyncdb\\services\\Sync',
-    ),
   ),
 );

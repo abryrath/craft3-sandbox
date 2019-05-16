@@ -301,9 +301,6 @@ abstract class Template
         return array_unique($names);
     }
 
-    /**
-     * @return Template|TemplateWrapper
-     */
     protected function loadTemplate($template, $templateName = null, $line = null, $index = null)
     {
         try {
@@ -342,16 +339,6 @@ abstract class Template
 
             throw $e;
         }
-    }
-
-    /**
-     * @internal
-     *
-     * @return Template
-     */
-    protected function unwrap()
-    {
-        return $this;
     }
 
     /**
