@@ -1,6 +1,9 @@
 <?php
 
 use unionco\app\AppModule;
+use unionco\graphql\GraphQLModule;
+use unionco\graphql\queries\LocationQuery;
+use unionco\graphql\types\LocationType;
 
 /**
  * Yii Application Config
@@ -23,6 +26,7 @@ use unionco\app\AppModule;
 return [
     'modules' => [
         //'app' => AppModule::class,
+        'graphql' => GraphQLModule::class,
     ],
-    'bootstrap' => [], //['app'],
+    'bootstrap' => ['graphql'], //['app'],
 ];
