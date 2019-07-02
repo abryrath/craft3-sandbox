@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f71980a9d89a662cacb49e5a70b2730d",
+    "content-hash": "7504494624b6175e66c0e8b946ee197d",
     "packages": [
         {
             "name": "cebe/markdown",
@@ -314,22 +314,22 @@
         },
         {
             "name": "craftcms/cms",
-            "version": "3.1.27",
+            "version": "3.2.0-RC2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/craftcms/cms.git",
-                "reference": "d5b2aa25fa2e7bb7527fca807b5229e99ea42218"
+                "reference": "d46c389981002c9bec933f1789cccdb3692e5d77"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/cms/zipball/d5b2aa25fa2e7bb7527fca807b5229e99ea42218",
-                "reference": "d5b2aa25fa2e7bb7527fca807b5229e99ea42218",
+                "url": "https://api.github.com/repos/craftcms/cms/zipball/d46c389981002c9bec933f1789cccdb3692e5d77",
+                "reference": "d46c389981002c9bec933f1789cccdb3692e5d77",
                 "shasum": ""
             },
             "require": {
                 "composer/composer": "1.6.3",
                 "craftcms/oauth2-craftid": "~1.0.0",
-                "craftcms/plugin-installer": "~1.5.0",
+                "craftcms/plugin-installer": "~1.5.3",
                 "craftcms/server-check": "~1.1.0",
                 "creocoder/yii2-nested-sets": "~0.9.0",
                 "danielstjules/stringy": "^3.1.0",
@@ -348,13 +348,14 @@
                 "league/oauth2-client": "^2.2.1",
                 "mikehaertl/php-shellcommand": "^1.2.5",
                 "php": ">=7.0.0",
+                "phpoffice/phpspreadsheet": "^1.6.0",
                 "pixelandtonic/imagine": "~0.7.1.2",
                 "seld/cli-prompt": "^1.0.3",
                 "symfony/yaml": "^3.2|^4.0",
                 "true/punycode": "^2.1.0",
-                "twig/twig": "~2.8.1",
+                "twig/twig": "~2.11.0",
                 "yii2tech/ar-softdelete": "^1.0.2",
-                "yiisoft/yii2": "~2.0.17.0",
+                "yiisoft/yii2": "~2.0.21.0",
                 "yiisoft/yii2-debug": "^2.0.10",
                 "yiisoft/yii2-queue": "2.1.0",
                 "yiisoft/yii2-swiftmailer": "^2.1.0",
@@ -370,6 +371,15 @@
                 "bower-asset/punycode": "1.3.*",
                 "bower-asset/yii2-pjax": "~2.0.1"
             },
+            "require-dev": {
+                "codeception/codeception": "^3.0",
+                "codeception/mockery-module": "^0.3",
+                "codeception/specify": "^0.4",
+                "codeception/verify": "^1.0",
+                "fzaninotto/faker": "^1.8",
+                "league/factory-muffin": "^3.0",
+                "vlucas/phpdotenv": "^3.0"
+            },
             "suggest": {
                 "ext-iconv": "Adds support for more character encodings than PHP’s built-in mb_convert_encoding() function, which Craft will take advantage of when converting strings to UTF-8.",
                 "ext-imagick": "Adds support for more image processing formats and options.",
@@ -381,6 +391,7 @@
                     "craft\\": "src/"
                 }
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "proprietary"
             ],
@@ -391,15 +402,7 @@
                 "craftcms",
                 "yii2"
             ],
-            "support": {
-                "email": "support@craftcms.com",
-                "issues": "https://github.com/craftcms/cms/issues?state=open",
-                "forum": "https://craftcms.stackexchange.com/",
-                "source": "https://github.com/craftcms/cms",
-                "docs": "https://docs.craftcms.com/v3/",
-                "rss": "https://github.com/craftcms/cms/releases.atom"
-            },
-            "time": "2019-05-14T18:43:31+00:00"
+            "time": "2019-06-27T00:06:12+00:00"
         },
         {
             "name": "craftcms/commerce",
@@ -509,16 +512,16 @@
         },
         {
             "name": "craftcms/plugin-installer",
-            "version": "1.5.2",
+            "version": "1.5.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/craftcms/plugin-installer.git",
-                "reference": "2b75646ce7091d24ef053e8d0b45f89cab04b16f"
+                "reference": "4989a9d57babdf53da0bd70cf6a3145635d653e8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/plugin-installer/zipball/2b75646ce7091d24ef053e8d0b45f89cab04b16f",
-                "reference": "2b75646ce7091d24ef053e8d0b45f89cab04b16f",
+                "url": "https://api.github.com/repos/craftcms/plugin-installer/zipball/4989a9d57babdf53da0bd70cf6a3145635d653e8",
+                "reference": "4989a9d57babdf53da0bd70cf6a3145635d653e8",
                 "shasum": ""
             },
             "require": {
@@ -546,7 +549,7 @@
                 "installer",
                 "plugin"
             ],
-            "time": "2017-07-25T13:26:24+00:00"
+            "time": "2019-05-23T13:16:39+00:00"
         },
         {
             "name": "craftcms/server-check",
@@ -3413,16 +3416,16 @@
         },
         {
             "name": "twig/twig",
-            "version": "v2.8.1",
+            "version": "v2.11.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/twigphp/Twig.git",
-                "reference": "91cc2594d3143761ce0399c1caffd0b500ffe5b9"
+                "reference": "84a463403da1c81afbcedda8f0e788c78bd25a79"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/91cc2594d3143761ce0399c1caffd0b500ffe5b9",
-                "reference": "91cc2594d3143761ce0399c1caffd0b500ffe5b9",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/84a463403da1c81afbcedda8f0e788c78bd25a79",
+                "reference": "84a463403da1c81afbcedda8f0e788c78bd25a79",
                 "shasum": ""
             },
             "require": {
@@ -3430,10 +3433,15 @@
                 "symfony/polyfill-ctype": "^1.8",
                 "symfony/polyfill-mbstring": "^1.3"
             },
+            "require-dev": {
+                "psr/container": "^1.0",
+                "symfony/debug": "^2.7",
+                "symfony/phpunit-bridge": "^3.4.19|^4.1.8|^5.0"
+            },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.8-dev"
+                    "dev-master": "2.11-dev"
                 }
             },
             "autoload": {
@@ -3444,6 +3452,7 @@
                     "Twig\\": "src/"
                 }
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "BSD-3-Clause"
             ],
@@ -3470,7 +3479,7 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2019-04-16T17:14:24+00:00"
+            "time": "2019-06-05T11:17:07+00:00"
         },
         {
             "name": "unionco/core",
@@ -3518,6 +3527,60 @@
                 "union"
             ],
             "time": "2019-02-06T19:03:16+00:00"
+        },
+        {
+            "name": "unionco/craft-geolocation",
+            "version": "dev-master",
+            "dist": {
+                "type": "path",
+                "url": "../../Library/geolocation",
+                "reference": "4870644977a91af2a5e2997e59fceb86af213763"
+            },
+            "require": {
+                "craftcms/cms": "^3.0.0-RC1",
+                "guzzlehttp/guzzle": "^6.3",
+                "league/csv": "*"
+            },
+            "require-dev": {
+                "codeception/codeception": "^2.5",
+                "squizlabs/php_codesniffer": "^3.4",
+                "vimeo/psalm": "^3.2"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "Geolocation",
+                "handle": "geolocation",
+                "hasCpSettings": true,
+                "hasCpSection": false,
+                "changelogUrl": "https://raw.githubusercontent.com/abryrath/geolocation/master/CHANGELOG.md",
+                "class": "unionco\\geolocation\\GeolocationPlugin"
+            },
+            "autoload": {
+                "psr-4": {
+                    "unionco\\geolocation\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Abry Rath <abry.rath@union.co>",
+                    "homepage": "https://github.com/abryrath"
+                }
+            ],
+            "description": "Geolocation helper for Craft",
+            "keywords": [
+                "cms",
+                "craft",
+                "craft-plugin",
+                "craftcms",
+                "geolocation"
+            ],
+            "support": {
+                "docs": "https://github.com/abryrath/geolocation/blob/master/README.md",
+                "issues": "https://github.com/abryrath/geolocation/issues"
+            }
         },
         {
             "name": "unionco/craft-related-entry-types",
@@ -3684,60 +3747,6 @@
                 "docs": "https://github.com/unionco/google-services/blob/master/README.md",
                 "issues": "https://github.com/unionco/google-services/issues"
             }
-        },
-        {
-            "name": "unionco/import",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/unionco/craft-importer.git",
-                "reference": "f1fc8a8b0eafe27f973e0bcdab0a319a42aea5cb"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/unionco/craft-importer/zipball/f1fc8a8b0eafe27f973e0bcdab0a319a42aea5cb",
-                "reference": "f1fc8a8b0eafe27f973e0bcdab0a319a42aea5cb",
-                "shasum": ""
-            },
-            "require": {
-                "craftcms/cms": "^3.0.0-RC1"
-            },
-            "type": "craft-plugin",
-            "extra": {
-                "name": "Import",
-                "handle": "import",
-                "hasCpSettings": false,
-                "hasCpSection": false,
-                "changelogUrl": "https://raw.githubusercontent.com/x/import/master/CHANGELOG.md",
-                "components": {
-                    "entry": "unionco\\import\\services\\Entry"
-                },
-                "class": "unionco\\import\\Import"
-            },
-            "autoload": {
-                "psr-4": {
-                    "unionco\\import\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "UNION",
-                    "homepage": "https://bitbucket.org/unionco"
-                }
-            ],
-            "description": "Import data from a Craft 2 JSON export file",
-            "keywords": [
-                "Craft",
-                "cms",
-                "craft-plugin",
-                "craftcms",
-                "import"
-            ],
-            "time": "2019-01-14T18:12:42+00:00"
         },
         {
             "name": "unionco/syncdb",
@@ -3929,21 +3938,21 @@
         },
         {
             "name": "yiisoft/yii2",
-            "version": "2.0.17",
+            "version": "2.0.21",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-framework.git",
-                "reference": "b56159228c3b4990e38cf41ddd69af27ab015bea"
+                "reference": "7e4622252c5f272373e1339a47d331e4a55e9591"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/b56159228c3b4990e38cf41ddd69af27ab015bea",
-                "reference": "b56159228c3b4990e38cf41ddd69af27ab015bea",
+                "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/7e4622252c5f272373e1339a47d331e4a55e9591",
+                "reference": "7e4622252c5f272373e1339a47d331e4a55e9591",
                 "shasum": ""
             },
             "require": {
                 "bower-asset/inputmask": "~3.2.2 | ~3.3.5",
-                "bower-asset/jquery": "3.3.*@stable | 3.2.*@stable | 3.1.*@stable | 2.2.*@stable | 2.1.*@stable | 1.11.*@stable | 1.12.*@stable",
+                "bower-asset/jquery": "3.4.*@stable | 3.3.*@stable | 3.2.*@stable | 3.1.*@stable | 2.2.*@stable | 2.1.*@stable | 1.11.*@stable | 1.12.*@stable",
                 "bower-asset/punycode": "1.3.*",
                 "bower-asset/yii2-pjax": "~2.0.1",
                 "cebe/markdown": "~1.0.0 | ~1.1.0 | ~1.2.0",
@@ -3968,6 +3977,7 @@
                     "yii\\": ""
                 }
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "BSD-3-Clause"
             ],
@@ -4024,7 +4034,7 @@
                 "framework",
                 "yii2"
             ],
-            "time": "2019-03-22T21:26:26+00:00"
+            "time": "2019-06-18T14:25:08+00:00"
         },
         {
             "name": "yiisoft/yii2-composer",
@@ -5418,8 +5428,8 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "unionco/import": 20,
-        "unionco/google-services": 20
+        "unionco/google-services": 20,
+        "unionco/craft-geolocation": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,

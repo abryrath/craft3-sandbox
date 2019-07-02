@@ -47,7 +47,7 @@ commerce:
           uriFormat: 'shop/products/{slug}'
       skuFormat: ''
       titleFormat: '{product.title}'
-dateModified: 1558007945
+dateModified: 1562073240
 email:
   fromEmail: abry.rath@Union.co
   fromName: Sandbox
@@ -58,6 +58,66 @@ fieldGroups:
   928479c4-35b5-4539-a506-eb8e7f62f3be:
     name: EntryTypes
 fields:
+  055788a4-5c1d-47ff-8d5e-4d360bd9b9cc:
+    name: Locations
+    handle: locations
+    instructions: ''
+    searchable: true
+    translationMethod: site
+    translationKeyFormat: null
+    type: craft\fields\Matrix
+    settings:
+      minBlocks: ''
+      maxBlocks: ''
+      contentTable: '{{%matrixcontent_locations}}'
+      localizeBlocks: false
+    contentColumnType: string
+    fieldGroup: 59d31bcd-b077-4966-a85f-5e915c054a7c
+  2ee777f2-c22c-4cfa-8df1-816b47e39fc6:
+    name: 'Google Coords'
+    handle: googleCoords
+    instructions: ''
+    searchable: true
+    translationMethod: none
+    translationKeyFormat: null
+    type: unionco\geolocation\fields\CoordinatesField
+    settings:
+      showMap: '1'
+      mapProvider: google
+      apiKey: $GOOGLE_MAPS_API_KEY
+      columnType: text
+    contentColumnType: text
+    fieldGroup: 59d31bcd-b077-4966-a85f-5e915c054a7c
+  3cd0d1a3-8dd5-4b61-8910-e0809df6d6d9:
+    name: 'Matrix With Geolocation'
+    handle: matrixWithGeolocation
+    instructions: ''
+    searchable: true
+    translationMethod: site
+    translationKeyFormat: null
+    type: craft\fields\Matrix
+    settings:
+      minBlocks: ''
+      maxBlocks: ''
+      contentTable: '{{%matrixcontent_matrixwithgeolocation}}'
+      localizeBlocks: false
+    contentColumnType: string
+    fieldGroup: 59d31bcd-b077-4966-a85f-5e915c054a7c
+  4b17ed91-cdab-41ab-b06b-5360a1f81f91:
+    name: 'Mapbox Coords'
+    handle: mapboxCoords
+    instructions: ''
+    searchable: true
+    translationMethod: none
+    translationKeyFormat: null
+    type: unionco\geolocation\fields\CoordinatesField
+    settings:
+      showMap: '1'
+      mapProvider: mapbox
+      apiKey: $MAPBOX_API_TOKEN
+      columnType: text
+    contentColumnType: text
+    fieldGroup: 59d31bcd-b077-4966-a85f-5e915c054a7c
   7612361e-2859-4585-9f99-acfcee5cf7f8:
     contentColumnType: text
     fieldGroup: 59d31bcd-b077-4966-a85f-5e915c054a7c
@@ -72,30 +132,6 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: unionco\googleservices\fields\GooglePlacesField
-  df151ddf-8ad6-4e9d-b5bb-27c7d1fde5d1:
-    contentColumnType: string
-    fieldGroup: 59d31bcd-b077-4966-a85f-5e915c054a7c
-    handle: simpleMap
-    instructions: ''
-    name: 'Simple Map'
-    searchable: true
-    settings:
-      boundary: '""'
-      boundaryRestrictionNELat: ''
-      boundaryRestrictionNELng: ''
-      boundaryRestrictionSWLat: ''
-      boundaryRestrictionSWLng: ''
-      countryRestriction: ''
-      height: '400'
-      hideLatLng: '1'
-      hideMap: ''
-      lat: '51.272154'
-      lng: '0.514951'
-      typeRestriction: ''
-      zoom: '15'
-    translationKeyFormat: null
-    translationMethod: none
-    type: ether\simplemap\fields\MapField
   83681ac1-cb74-47ed-b9c2-e3791fb2dac6:
     name: 'Entry Types'
     handle: entryTypes
@@ -122,28 +158,94 @@ fields:
       localizeRelations: false
     contentColumnType: string
     fieldGroup: 928479c4-35b5-4539-a506-eb8e7f62f3be
-  055788a4-5c1d-47ff-8d5e-4d360bd9b9cc:
-    name: Locations
-    handle: locations
-    instructions: ''
-    searchable: true
-    translationMethod: site
-    translationKeyFormat: null
-    type: craft\fields\Matrix
-    settings:
-      minBlocks: ''
-      maxBlocks: ''
-      contentTable: '{{%matrixcontent_locations}}'
-      localizeBlocks: false
+  df151ddf-8ad6-4e9d-b5bb-27c7d1fde5d1:
     contentColumnType: string
     fieldGroup: 59d31bcd-b077-4966-a85f-5e915c054a7c
+    handle: simpleMap
+    instructions: ''
+    name: 'Simple Map'
+    searchable: true
+    settings:
+      boundary: '""'
+      boundaryRestrictionNELat: ''
+      boundaryRestrictionNELng: ''
+      boundaryRestrictionSWLat: ''
+      boundaryRestrictionSWLng: ''
+      countryRestriction: ''
+      height: '400'
+      hideLatLng: '1'
+      hideMap: ''
+      lat: '51.272154'
+      lng: '0.514951'
+      typeRestriction: ''
+      zoom: '15'
+    translationKeyFormat: null
+    translationMethod: none
+    type: ether\simplemap\fields\MapField
 matrixBlockTypes:
+  2f80e8be-2133-4577-a6a7-12224eee3a5b:
+    field: 3cd0d1a3-8dd5-4b61-8910-e0809df6d6d9
+    name: Location
+    handle: location
+    sortOrder: 1
+    fields:
+      9f6b48fe-a04a-4394-b983-e17e23acb67d:
+        name: 'Test Text'
+        handle: testText
+        instructions: ''
+        searchable: true
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\PlainText
+        settings:
+          placeholder: ''
+          code: ''
+          multiline: ''
+          initialRows: '4'
+          charLimit: ''
+          columnType: text
+        contentColumnType: text
+        fieldGroup: null
+    fieldLayouts:
+      edfcb0b3-ec64-4ca8-8dbe-eda8bd102277:
+        tabs:
+          -
+            name: Content
+            sortOrder: 1
+            fields:
+              9f6b48fe-a04a-4394-b983-e17e23acb67d:
+                required: false
+                sortOrder: 1
   e0b1fb64-74cd-4999-a54c-49fa52922e79:
     field: 055788a4-5c1d-47ff-8d5e-4d360bd9b9cc
     name: testBlock
     handle: testblock
     sortOrder: 1
     fields:
+      5e48e042-5937-471c-b36c-43e6292b5a07:
+        name: testField2
+        handle: testfield2
+        instructions: ''
+        searchable: true
+        translationMethod: site
+        translationKeyFormat: null
+        type: unionco\relatedentrytypes\fields\RelatedEntryTypesField
+        settings:
+          sections: null
+          entryTypes:
+            - '2'
+            - '3'
+            - '5'
+          sources:
+            - 'section:452e7866-2c9e-40ae-8467-88a339b65857'
+          source: null
+          targetSiteId: null
+          viewMode: null
+          limit: ''
+          selectionLabel: ''
+          localizeRelations: false
+        contentColumnType: string
+        fieldGroup: null
       9d4201b1-f4ab-410d-9c3d-977e027251e4:
         name: testField
         handle: testfield
@@ -169,30 +271,6 @@ matrixBlockTypes:
           localizeRelations: false
         contentColumnType: string
         fieldGroup: null
-      5e48e042-5937-471c-b36c-43e6292b5a07:
-        name: testField2
-        handle: testfield2
-        instructions: ''
-        searchable: true
-        translationMethod: site
-        translationKeyFormat: null
-        type: unionco\relatedentrytypes\fields\RelatedEntryTypesField
-        settings:
-          sections: null
-          entryTypes:
-            - '2'
-            - '3'
-            - '5'
-          sources:
-            - 'section:452e7866-2c9e-40ae-8467-88a339b65857'
-          source: null
-          targetSiteId: null
-          viewMode: null
-          limit: ''
-          selectionLabel: ''
-          localizeRelations: false
-        contentColumnType: string
-        fieldGroup: null
     fieldLayouts:
       446d4b9f-05b2-4d14-83c5-439a07ccf776:
         tabs:
@@ -200,12 +278,12 @@ matrixBlockTypes:
             name: Content
             sortOrder: 1
             fields:
-              9d4201b1-f4ab-410d-9c3d-977e027251e4:
-                required: false
-                sortOrder: 1
               5e48e042-5937-471c-b36c-43e6292b5a07:
                 required: false
                 sortOrder: 2
+              9d4201b1-f4ab-410d-9c3d-977e027251e4:
+                required: false
+                sortOrder: 1
 plugins:
   commerce:
     edition: lite
@@ -296,7 +374,6 @@ sections:
         titleLabel: Title
     handle: locations
     name: Locations
-    propagateEntries: true
     siteSettings:
       8c671faa-294d-42c3-b5ca-2e12065870df:
         enabledByDefault: true
@@ -304,6 +381,88 @@ sections:
         template: ''
         uriFormat: 'locations/{slug}'
     type: channel
+    propagationMethod: all
+  3beefca8-6a9f-4ca0-9e00-c673cf6cd138:
+    name: Locations
+    handle: locations
+    type: channel
+    enableVersioning: true
+    siteSettings:
+      8c671faa-294d-42c3-b5ca-2e12065870df:
+        enabledByDefault: true
+        hasUrls: true
+        uriFormat: 'locations/{slug}'
+        template: locations/_entry
+    entryTypes:
+      3425efc9-9938-4b0f-aba5-6510591b5076:
+        name: GoogleLocationTest
+        handle: locations
+        hasTitleField: true
+        titleLabel: Title
+        titleFormat: ''
+        sortOrder: 1
+        fieldLayouts:
+          f2aea089-a89e-4e66-ba8e-a7749f842426:
+            tabs:
+              -
+                name: 'Tab 1'
+                sortOrder: 1
+                fields:
+                  2ee777f2-c22c-4cfa-8df1-816b47e39fc6:
+                    required: false
+                    sortOrder: 1
+      abf888ee-973f-4edf-a9f6-675a1d6dc92c:
+        name: MapBoxTest
+        handle: test
+        hasTitleField: true
+        titleLabel: Title
+        titleFormat: ''
+        sortOrder: 2
+        fieldLayouts:
+          81ed2134-b2be-4c52-a7e4-f228f545ef5c:
+            tabs:
+              -
+                name: 'Tab 1'
+                sortOrder: 1
+                fields:
+                  4b17ed91-cdab-41ab-b06b-5360a1f81f91:
+                    required: false
+                    sortOrder: 1
+    propagationMethod: all
+  452e7866-2c9e-40ae-8467-88a339b65857:
+    name: Pages
+    handle: pages
+    type: channel
+    enableVersioning: true
+    siteSettings:
+      8c671faa-294d-42c3-b5ca-2e12065870df:
+        enabledByDefault: true
+        hasUrls: true
+        uriFormat: 'pages/{slug}'
+        template: ''
+    entryTypes:
+      6133e354-ef54-4736-bc28-cca2702bb9d3:
+        name: Pages
+        handle: pages
+        hasTitleField: true
+        titleLabel: Title
+        titleFormat: null
+        sortOrder: 1
+      897f759e-efeb-4c51-9a9d-46be7e0ea7fb:
+        name: Page1
+        handle: page1
+        hasTitleField: true
+        titleLabel: Title
+        titleFormat: ''
+        sortOrder: 2
+      d314c974-cb9b-4d11-99c2-dbe5930529b6:
+        name: Page2
+        handle: page2
+        hasTitleField: true
+        titleLabel: Title
+        titleFormat: ''
+        sortOrder: 3
+    propagationMethod: all
   5e4fb093-81f2-4de3-9287-349052b1bfaa:
     enableVersioning: true
     entryTypes:
@@ -326,7 +485,6 @@ sections:
                     sortOrder: 1
     handle: home
     name: Home
-    propagateEntries: true
     siteSettings:
       8c671faa-294d-42c3-b5ca-2e12065870df:
         enabledByDefault: true
@@ -334,6 +492,7 @@ sections:
         template: home/_entry
         uriFormat: __home__
     type: single
+    propagationMethod: all
   ce0b57ee-6dff-4d80-aa5a-d8381ba9323f:
     enableVersioning: true
     entryTypes:
@@ -367,7 +526,6 @@ sections:
         titleLabel: Title
     handle: pages
     name: Pages
-    propagateEntries: true
     siteSettings:
       8c671faa-294d-42c3-b5ca-2e12065870df:
         enabledByDefault: true
@@ -375,67 +533,7 @@ sections:
         template: ''
         uriFormat: 'pages/{slug}'
     type: channel
-  3beefca8-6a9f-4ca0-9e00-c673cf6cd138:
-    name: Locations
-    handle: locations
-    type: channel
-    enableVersioning: true
-    propagateEntries: true
-    siteSettings:
-      8c671faa-294d-42c3-b5ca-2e12065870df:
-        enabledByDefault: true
-        hasUrls: true
-        uriFormat: 'locations/{slug}'
-        template: ''
-    entryTypes:
-      3425efc9-9938-4b0f-aba5-6510591b5076:
-        name: LocationsTrest
-        handle: locations
-        hasTitleField: true
-        titleLabel: Title
-        titleFormat: ''
-        sortOrder: 1
-      abf888ee-973f-4edf-a9f6-675a1d6dc92c:
-        name: Test
-        handle: test
-        hasTitleField: true
-        titleLabel: Title
-        titleFormat: ''
-        sortOrder: 2
-  452e7866-2c9e-40ae-8467-88a339b65857:
-    name: Pages
-    handle: pages
-    type: channel
-    enableVersioning: true
-    propagateEntries: true
-    siteSettings:
-      8c671faa-294d-42c3-b5ca-2e12065870df:
-        enabledByDefault: true
-        hasUrls: true
-        uriFormat: 'pages/{slug}'
-        template: ''
-    entryTypes:
-      6133e354-ef54-4736-bc28-cca2702bb9d3:
-        name: Pages
-        handle: pages
-        hasTitleField: true
-        titleLabel: Title
-        titleFormat: null
-        sortOrder: 1
-      897f759e-efeb-4c51-9a9d-46be7e0ea7fb:
-        name: Page1
-        handle: page1
-        hasTitleField: true
-        titleLabel: Title
-        titleFormat: ''
-        sortOrder: 2
-      d314c974-cb9b-4d11-99c2-dbe5930529b6:
-        name: Page2
-        handle: page2
-        hasTitleField: true
-        titleLabel: Title
-        titleFormat: ''
-        sortOrder: 3
+    propagationMethod: all
 siteGroups:
   2c4afbfc-22ff-4aba-a8c9-a2f6896526a9:
     name: Sandbox
@@ -453,7 +551,7 @@ system:
   edition: pro
   live: true
   name: Sandbox
-  schemaVersion: 3.1.28
+  schemaVersion: 3.2.12
   timeZone: America/Los_Angeles
 users:
   allowPublicRegistration: false
@@ -461,3 +559,53 @@ users:
   photoSubpath: ''
   photoVolumeUid: null
   requireEmailVerification: true
+  groups:
+    e125a90f-8ca0-429f-9506-6cdce2dbc18a:
+      name: 'Pseudo Admin'
+      handle: pseudoAdmin
+      permissions:
+        - accesssitewhensystemisoff
+        - accesscp
+        - customizesources
+        - registerusers
+        - moderateusers
+        - assignuserpermissions
+        - assignusergroups
+        - administrateusers
+        - editusers
+        - deleteusers
+        - 'publishentries:5e4fb093-81f2-4de3-9287-349052b1bfaa'
+        - 'publishpeerentrydrafts:5e4fb093-81f2-4de3-9287-349052b1bfaa'
+        - 'deletepeerentrydrafts:5e4fb093-81f2-4de3-9287-349052b1bfaa'
+        - 'editpeerentrydrafts:5e4fb093-81f2-4de3-9287-349052b1bfaa'
+        - 'editentries:5e4fb093-81f2-4de3-9287-349052b1bfaa'
+        - 'createentries:3beefca8-6a9f-4ca0-9e00-c673cf6cd138'
+        - 'publishentries:3beefca8-6a9f-4ca0-9e00-c673cf6cd138'
+        - 'deleteentries:3beefca8-6a9f-4ca0-9e00-c673cf6cd138'
+        - 'publishpeerentries:3beefca8-6a9f-4ca0-9e00-c673cf6cd138'
+        - 'deletepeerentries:3beefca8-6a9f-4ca0-9e00-c673cf6cd138'
+        - 'editpeerentries:3beefca8-6a9f-4ca0-9e00-c673cf6cd138'
+        - 'publishpeerentrydrafts:3beefca8-6a9f-4ca0-9e00-c673cf6cd138'
+        - 'deletepeerentrydrafts:3beefca8-6a9f-4ca0-9e00-c673cf6cd138'
+        - 'editpeerentrydrafts:3beefca8-6a9f-4ca0-9e00-c673cf6cd138'
+        - 'editentries:3beefca8-6a9f-4ca0-9e00-c673cf6cd138'
+        - 'createentries:452e7866-2c9e-40ae-8467-88a339b65857'
+        - 'publishentries:452e7866-2c9e-40ae-8467-88a339b65857'
+        - 'deleteentries:452e7866-2c9e-40ae-8467-88a339b65857'
+        - 'publishpeerentries:452e7866-2c9e-40ae-8467-88a339b65857'
+        - 'deletepeerentries:452e7866-2c9e-40ae-8467-88a339b65857'
+        - 'editpeerentries:452e7866-2c9e-40ae-8467-88a339b65857'
+        - 'publishpeerentrydrafts:452e7866-2c9e-40ae-8467-88a339b65857'
+        - 'deletepeerentrydrafts:452e7866-2c9e-40ae-8467-88a339b65857'
+        - 'editpeerentrydrafts:452e7866-2c9e-40ae-8467-88a339b65857'
+        - 'editentries:452e7866-2c9e-40ae-8467-88a339b65857'
+        - 'utility:updates'
+        - 'utility:system-report'
+        - 'utility:php-info'
+        - 'utility:system-messages'
+        - 'utility:search-indexes'
+        - 'utility:clear-caches'
+        - 'utility:deprecation-errors'
+        - 'utility:db-backup'
+        - 'utility:find-replace'
+        - 'utility:migrations'

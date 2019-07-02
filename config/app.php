@@ -26,7 +26,7 @@ use unionco\graphql\types\LocationType;
 return [
     'modules' => [
         //'app' => AppModule::class,
-        'graphql' => GraphQLModule::class,
+        //'graphql' => GraphQLModule::class,
     ],
-    'bootstrap' => ['graphql'], //['app'],
+    'bootstrap' => [], //['graphql'], //['app'],
 ];

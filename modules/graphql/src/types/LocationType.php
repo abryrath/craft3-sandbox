@@ -24,3 +24,4 @@ class LocationType extends GraphQLType
         return $result;
     }
 }
+\

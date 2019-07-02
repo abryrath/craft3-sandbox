@@ -1,8 +1,6 @@
 {
     "require": {
-        "craftcms/cms": "3.1.27",
         "vlucas/phpdotenv": "^2.4.0",
-        "unionco/import": "dev-master",
         "unionco/google-services": "@dev",
         "league/csv": "^8",
         "ether/simplemap": "3.4.11",
@@ -12,7 +10,12 @@
         "scrivo/highlight.php": "v9.15.6.1",
         "tsingsun/yii2-graphql": "^0.11.4",
         "unionco/craft-sync-db": "^0.5.1",
-        "unionco/craft-related-entry-types": "^0.1.4"
+        "unionco/craft-related-entry-types": "^0.1.4",
+        "craftcms/cms": "3.2.0-RC2",
+        "unionco/craft-geolocation": "@dev",
+        "yiisoft/yii2": "2.0.21.0",
+        "craftcms/plugin-installer": "1.5.4",
+        "twig/twig": "2.11.2"
     },
     "autoload": {
         "psr-4": {
@@ -62,6 +65,11 @@
             "symlink": true,
             "type": "path",
             "url": "../../Library/core"
+        },
+        {
+            "smymlink": true,
+            "type": "path",
+            "url": "../../Library/cms"
         }
     ],
     "minimum-stability": "dev",
