@@ -47,7 +47,7 @@ commerce:
           uriFormat: 'shop/products/{slug}'
       skuFormat: ''
       titleFormat: '{product.title}'
-dateModified: 1562073240
+dateModified: 1562331756
 email:
   fromEmail: abry.rath@Union.co
   fromName: Sandbox

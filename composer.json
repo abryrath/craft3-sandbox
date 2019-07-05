@@ -9,12 +9,13 @@
         "monolog/monolog": "^1.24",
         "scrivo/highlight.php": "v9.15.6.1",
         "tsingsun/yii2-graphql": "^0.11.4",
-        "unionco/craft-sync-db": "^0.5.1",
+        "unionco/craft-sync-db": "^0.5.2",
         "unionco/craft-related-entry-types": "^0.1.4",
         "craftcms/cms": "3.2.0-RC3",
         "yiisoft/yii2": "2.0.21.0",
         "craftcms/plugin-installer": "1.5.4",
-        "twig/twig": "2.11.2"
+        "twig/twig": "2.11.2",
+        "unionco/syncdb": "^0.5.1"
     },
     "autoload": {
         "psr-4": {
