@@ -20,7 +20,7 @@ return [
             'phpPath' => '/usr/bin/php',
             'mysqlDumpPath' => '/usr/bin/mysqldump',
             'environment' => CpService::ENV_PRODUCTION,
-            'verbosity' => Output::VERBOSITY_DEBUG,
+            'verbosity' => Output::VERBOSITY_NORMAL, //DEBUG,
         ],
         'staging' => [
             'username' => 'user',

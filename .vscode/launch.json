@@ -17,6 +17,14 @@
             "program": "${file}",
             "cwd": "${fileDirname}",
             "port": 9000
+        },
+        {
+            "name": "Syncdb",
+            "type": "php",
+            "request": "launch",
+            "port": 9072,
+            "program": "/Users/abryrath/Union/Sites/craft3-sandbox/craft",
+            "args": ["sync-db/sync", "production"]
         }
     ]
 }
