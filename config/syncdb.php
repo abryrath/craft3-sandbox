@@ -10,6 +10,11 @@ use unionco\craftsyncdb\services\CpService;
  **/
 
 return [
+    'globals' => [
+        'ignoredTables' => [
+            'craft_templatecaches',
+        ],
+    ],
     'remotes' => [
         'production' => [
             'username' => 'abry',

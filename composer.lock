@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6c535ae99eb439cba6dc8d7e204e717c",
+    "content-hash": "5e5df66bde2440b87d7a76e39e7e179f",
     "packages": [
         {
             "name": "cebe/markdown",
@@ -3644,23 +3644,17 @@
         },
         {
             "name": "unionco/craft-sync-db",
-            "version": "v0.5.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/unionco/craft-sync-db.git",
-                "reference": "c842697b384484d2f50bbcd4260a03c845f02e3d"
-            },
+            "version": "dev-dev",
             "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/unionco/craft-sync-db/zipball/c842697b384484d2f50bbcd4260a03c845f02e3d",
-                "reference": "c842697b384484d2f50bbcd4260a03c845f02e3d",
-                "shasum": ""
+                "type": "path",
+                "url": "../../Library/craft-sync-db",
+                "reference": "8f3af8806796984b5c6ab1cf44f28534b84e28ce"
             },
             "require": {
                 "craftcms/cms": "^3.0.0-RC1",
                 "monolog/monolog": "^1.24",
                 "scrivo/highlight.php": "v9.15.6.1",
-                "unionco/syncdb": "^0.5.1"
+                "unionco/syncdb": "@dev"
             },
             "require-dev": {
                 "vimeo/psalm": "^3.0"
@@ -3682,7 +3676,6 @@
                     "unionco\\craftsyncdb\\": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -3694,13 +3687,16 @@
             ],
             "description": "Craft 3 plugin to sync database across environments",
             "keywords": [
-                "Craft",
                 "cms",
+                "craft",
                 "craft-plugin",
                 "craft-sync-db",
                 "craftcms"
             ],
-            "time": "2019-07-05T13:32:58+00:00"
+            "support": {
+                "docs": "https://github.com/unionco/craft-sync-db",
+                "issues": "https://github.com/unionco/craft-sync-db"
+            }
         },
         {
             "name": "unionco/google-services",
@@ -3755,17 +3751,11 @@
         },
         {
             "name": "unionco/syncdb",
-            "version": "v0.5.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/unionco/syncdb.git",
-                "reference": "19880a075468e13ee4720e22a49ae39bb15267ab"
-            },
+            "version": "dev-feature/ignored-tables",
             "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/unionco/syncdb/zipball/19880a075468e13ee4720e22a49ae39bb15267ab",
-                "reference": "19880a075468e13ee4720e22a49ae39bb15267ab",
-                "shasum": ""
+                "type": "path",
+                "url": "../../Library/syncdb",
+                "reference": "f090f3abd53da03bbb3c096a179e3788a8170a60"
             },
             "require": {
                 "symfony/console": "^4.2||^3.0",
@@ -3780,7 +3770,6 @@
                     "unionco\\syncdb\\": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -3790,8 +3779,7 @@
                     "email": "unionco@gmail.com"
                 }
             ],
-            "description": "Library to assist with syncing databases across different environments",
-            "time": "2019-07-05T13:08:37+00:00"
+            "description": "Library to assist with syncing databases across different environments"
         },
         {
             "name": "vlucas/phpdotenv",
@@ -5378,7 +5366,8 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "unionco/google-services": 20
+        "unionco/google-services": 20,
+        "unionco/craft-sync-db": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
