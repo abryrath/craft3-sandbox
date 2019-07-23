@@ -9,7 +9,7 @@
         "monolog/monolog": "^1.24",
         "scrivo/highlight.php": "v9.15.6.1",
         "tsingsun/yii2-graphql": "^0.11.4",
-        "unionco/craft-sync-db": "^0.5.2",
+        "unionco/craft-sync-db": "v0.6.2",
         "unionco/craft-related-entry-types": "^0.1.4",
         "craftcms/cms": "3.2.0-RC3",
         "yiisoft/yii2": "2.0.21.0",
