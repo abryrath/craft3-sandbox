@@ -1,24 +1,17 @@
 {
     "require": {
         "vlucas/phpdotenv": "^2.4.0",
-        "unionco/google-services": "@dev",
         "league/csv": "^8",
         "ether/simplemap": "3.4.11",
         "craftcms/commerce": "2.1.2",
         "unionco/core": "^3.13",
         "monolog/monolog": "^1.24",
-        "scrivo/highlight.php": "v9.15.6.1",
         "tsingsun/yii2-graphql": "^0.11.4",
-<<<<<<< HEAD
-        "unionco/craft-sync-db": "v0.6.2",
-=======
->>>>>>> 2d6cc38862361f6dc3cdd8269c6f8a9f5a7cb902
-        "unionco/craft-related-entry-types": "^0.1.4",
         "craftcms/cms": "3.2.0-RC3",
         "yiisoft/yii2": "2.0.21.0",
         "craftcms/plugin-installer": "1.5.4",
         "twig/twig": "2.11.2",
-        "unionco/craft-sync-db": "^0.6.2"
+        "unionco/craft-sync-db": "^0.6.3"
     },
     "autoload": {
         "psr-4": {
@@ -37,28 +30,11 @@
             "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
         ]
     },
-    "repositories": [{
-            "type": "path",
-            "url": "./import",
-            "symlink": true
-        },
-        {
-            "type": "path",
-            "url": "../../Library/relatedentrytypes"
-        },
-        {
-            "type": "path",
-            "url": "./googleservices"
-        },
+    "repositories": [
         {
             "symlink": true,
             "type": "path",
             "url": "../../Library/core"
-        },
-        {
-            "smymlink": true,
-            "type": "path",
-            "url": "../../Library/cms"
         }
     ],
     "minimum-stability": "dev",
