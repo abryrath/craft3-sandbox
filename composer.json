@@ -11,7 +11,8 @@
         "yiisoft/yii2": "2.0.21.0",
         "craftcms/plugin-installer": "1.5.4",
         "twig/twig": "2.11.2",
-        "unionco/craft-sync-db": "^0.6.3"
+        "unionco/craft-sync-db": "@dev",
+        "unionco/craft-related-entry-types": "@dev"
     },
     "autoload": {
         "psr-4": {
@@ -35,6 +36,14 @@
             "symlink": true,
             "type": "path",
             "url": "../../Library/core"
+        },
+        {
+            "type": "path",
+            "url": "../../Library/craft-sync-db"
+        },
+        {
+            "type": "path",
+            "url": "../../Library/relatedentrytypes"
         }
     ],
     "minimum-stability": "dev",

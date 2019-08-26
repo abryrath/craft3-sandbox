@@ -1,0 +1,25 @@
+{
+    "name": "unionco/syncdb",
+    "description": "Library to assist with syncing databases across different environments",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Abry Rath",
+            "email": "unionco@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "vlucas/phpdotenv": "^2.5",
+        "symfony/console": "^4.2||^3.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "unionco\\syncdb\\": "src/"
+        }
+    },
+    "require-dev": {
+        "vimeo/psalm": "^3.0"
+    }
+}

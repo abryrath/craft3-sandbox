@@ -3,5 +3,5 @@
 
 .DS_Store
 storage/
-vendor/
+# vendor/
 web/cpresources/

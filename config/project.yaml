@@ -47,7 +47,7 @@ commerce:
           uriFormat: 'shop/products/{slug}'
       skuFormat: ''
       titleFormat: '{product.title}'
-dateModified: 1563904336
+dateModified: 1565717241
 email:
   fromEmail: abry.rath@Union.co
   fromName: Sandbox
@@ -117,6 +117,29 @@ fields:
       apiKey: $MAPBOX_API_TOKEN
       columnType: text
     contentColumnType: text
+    fieldGroup: 59d31bcd-b077-4966-a85f-5e915c054a7c
+  5ca43528-1646-42ae-93fb-8ac80f375761:
+    name: RET
+    handle: ret
+    instructions: ''
+    searchable: true
+    translationMethod: site
+    translationKeyFormat: null
+    type: unionco\relatedentrytypes\fields\RelatedEntryTypesField
+    settings:
+      sections:
+        - db8a903d-8886-4adf-af23-649a07d69993
+      entryTypes:
+        - '4'
+      sources: '*'
+      source: null
+      targetSiteId: null
+      viewMode: null
+      limit: ''
+      selectionLabel: ''
+      localizeRelations: false
+      validateRelatedElements: false
+    contentColumnType: string
     fieldGroup: 59d31bcd-b077-4966-a85f-5e915c054a7c
   7612361e-2859-4585-9f99-acfcee5cf7f8:
     contentColumnType: text
@@ -319,10 +342,6 @@ plugins:
     edition: standard
     enabled: false
     schemaVersion: 0.0.1
-  related-entry-types:
-    edition: standard
-    enabled: true
-    schemaVersion: 0.0.1
   simplemap:
     edition: standard
     enabled: false
@@ -333,7 +352,35 @@ plugins:
   sync-db:
     edition: standard
     enabled: true
-    schemaVersion: 1.0.0
+    schemaVersion: 1.1.0
+    settings:
+      skipTables:
+        - craft_templatecaches
+      environments:
+        production:
+          username: abry
+          host: abryrath.com
+          root: /home/abry/Sites/craft3-sandbox/
+          backupDirectory: /home/abry/Sites/craft3-sandbox/storage/backups/databases/
+          port: 22
+          phpPath: /usr/bin/php
+          mysqlDumpPath: /usr/bin/mysqldump
+          environment: production
+          verbosity: 32
+        staging:
+          username: user
+          host: staging.example.com
+          root: /path/to/project/
+          backupDirectory: /path/to/project/storage/backups/databases/
+          port: 22
+          phpPath: /usr/local/bin/php
+          mysqlDumpPath: /usr/bin/mysqldump
+          environment: staging
+          verbosity: 128
+  related-entry-types:
+    edition: standard
+    enabled: true
+    schemaVersion: 0.0.1
 sections:
   3634776b-6b68-4e15-96a9-f0f3f42e1951:
     enableVersioning: true
@@ -539,20 +586,20 @@ siteGroups:
     name: Sandbox
 sites:
   8c671faa-294d-42c3-b5ca-2e12065870df:
-    baseUrl: $DEFAULT_SITE_URL
-    handle: default
-    hasUrls: true
-    language: en-US
-    name: Sandbox
-    primary: true
     siteGroup: 2c4afbfc-22ff-4aba-a8c9-a2f6896526a9
+    name: Sandbox
+    handle: default
+    language: en-US
+    hasUrls: true
+    baseUrl: $DEFAULT_SITE_URL
     sortOrder: 1
+    primary: true
 system:
   edition: pro
   live: true
   name: Sandbox
   schemaVersion: 3.2.16
-  timeZone: America/Los_Angeles
+  timeZone: America/New_York
 users:
   allowPublicRegistration: false
   defaultGroup: null
