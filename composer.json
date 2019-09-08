@@ -6,13 +6,13 @@
         "craftcms/commerce": "2.1.2",
         "unionco/core": "^3.13",
         "monolog/monolog": "^1.24",
-        "tsingsun/yii2-graphql": "^0.11.4",
-        "craftcms/cms": "3.2.6",
+        "craftcms/cms": "3.3.1.1",
         "yiisoft/yii2": "2.0.21.0",
         "craftcms/plugin-installer": "1.5.4",
         "twig/twig": "2.11.2",
         "unionco/craft-sync-db": "@dev",
-        "unionco/craft-related-entry-types": "@dev"
+        "unionco/craft-related-entry-types": "@dev",
+        "unionco/craft-coachmarks": "@dev"
     },
     "autoload": {
         "psr-4": {
@@ -48,6 +48,10 @@
         {
             "type": "path",
             "url": "../../Library/relatedentrytypes"
+        },
+        {
+            "type": "path",
+            "url": "../../Library/craft-cms-coachmarks"
         }
     ],
     "minimum-stability": "dev",

@@ -47,7 +47,7 @@ commerce:
           uriFormat: 'shop/products/{slug}'
       skuFormat: ''
       titleFormat: '{product.title}'
-dateModified: 1565717241
+dateModified: 1567958223
 email:
   fromEmail: abry.rath@Union.co
   fromName: Sandbox
@@ -381,6 +381,14 @@ plugins:
     edition: standard
     enabled: true
     schemaVersion: 0.0.1
+  coacher:
+    edition: standard
+    enabled: false
+    schemaVersion: 0.0.1
+  coachmarks:
+    edition: standard
+    enabled: true
+    schemaVersion: 0.0.1
 sections:
   3634776b-6b68-4e15-96a9-f0f3f42e1951:
     enableVersioning: true
@@ -598,7 +606,7 @@ system:
   edition: pro
   live: true
   name: Sandbox
-  schemaVersion: 3.2.16
+  schemaVersion: 3.3.3
   timeZone: America/New_York
 users:
   allowPublicRegistration: false

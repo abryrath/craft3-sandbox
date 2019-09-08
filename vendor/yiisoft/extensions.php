@@ -30,24 +30,6 @@ return array (
       '@yii/queue/sqs' => $vendorDir . '/yiisoft/yii2-queue/src/drivers/sqs',
     ),
   ),
-  'yiisoft/yii2-debug' => 
-  array (
-    'name' => 'yiisoft/yii2-debug',
-    'version' => '2.1.5.0',
-    'alias' => 
-    array (
-      '@yii/debug' => $vendorDir . '/yiisoft/yii2-debug/src',
-    ),
-  ),
-  'yii2tech/ar-softdelete' => 
-  array (
-    'name' => 'yii2tech/ar-softdelete',
-    'version' => '1.0.3.0',
-    'alias' => 
-    array (
-      '@yii2tech/ar/softdelete' => $vendorDir . '/yii2tech/ar-softdelete/src',
-    ),
-  ),
   'creocoder/yii2-nested-sets' => 
   array (
     'name' => 'creocoder/yii2-nested-sets',
@@ -57,13 +39,22 @@ return array (
       '@creocoder/nestedsets' => $vendorDir . '/creocoder/yii2-nested-sets/src',
     ),
   ),
-  'tsingsun/yii2-graphql' => 
+  'yiisoft/yii2-debug' => 
   array (
-    'name' => 'tsingsun/yii2-graphql',
-    'version' => '0.11.4.0',
+    'name' => 'yiisoft/yii2-debug',
+    'version' => '2.1.8.0',
     'alias' => 
     array (
-      '@yii/graphql' => $vendorDir . '/tsingsun/yii2-graphql/src',
+      '@yii/debug' => $vendorDir . '/yiisoft/yii2-debug/src',
+    ),
+  ),
+  'yii2tech/ar-softdelete' => 
+  array (
+    'name' => 'yii2tech/ar-softdelete',
+    'version' => '1.0.4.0',
+    'alias' => 
+    array (
+      '@yii2tech/ar/softdelete' => $vendorDir . '/yii2tech/ar-softdelete/src',
     ),
   ),
 );

@@ -349,7 +349,7 @@ class Image
             $imagick->stripImage();
 
             if (!empty($iccProfiles)) {
-                $imagick->profileImage("icc", $iccProfiles['icc'] ?? []);
+                $imagick->profileImage("icc", $iccProfiles['icc'] ?? '');
             }
         }
     }
@@ -368,8 +368,6 @@ class Image
         $ppi = 72;
 
         switch ($unit) {
-            case 'px':
-                return 1;
             case 'in':
                 return $ppi;
             case 'pt':
