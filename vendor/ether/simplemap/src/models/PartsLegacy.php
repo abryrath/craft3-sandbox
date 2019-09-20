@@ -8,6 +8,8 @@
 
 namespace ether\simplemap\models;
 
+use Craft;
+use craft\helpers\Json;
 use ether\simplemap\enums\GeoService;
 
 /**
@@ -48,6 +50,7 @@ class PartsLegacy extends Parts
 		'post_box',
 		'postal_code',
 		'postal_code_prefix',
+		'postal_code_suffix',
 		'postal_town',
 		'premise',
 		'room',
@@ -89,6 +92,7 @@ class PartsLegacy extends Parts
 	public $post_box;
 	public $postal_code;
 	public $postal_code_prefix;
+	public $postal_code_suffix;
 	public $postal_town;
 	public $premise;
 	public $room;
@@ -126,6 +130,7 @@ class PartsLegacy extends Parts
 	public $post_box_short;
 	public $postal_code_short;
 	public $postal_code_prefix_short;
+	public $postal_code_suffix_short;
 	public $postal_town_short;
 	public $premise_short;
 	public $room_short;
@@ -147,9 +152,41 @@ class PartsLegacy extends Parts
 
 	public function __construct ($parts = null)
 	{
+		if (!$this->_isAssoc($parts))
+		{
+			$parts = array_reduce(
+				$parts,
+				function ($a, $part) {
+					$key     = $part['types'][0];
+					$a[$key] = $part['long_name'];
+
+					return $a;
+				},
+				[]
+			);
+		}
+
 		\Yii::configure($this, $parts);
 
 		parent::__construct($parts, GeoService::GoogleMaps);
+	}
+
+	public function __set ($name, $value)
+	{
+		// Prevent setting any new parameters that we don't support
+		if (!$this->hasProperty($name))
+		{
+			$name = Json::encode($name);
+			$value = Json::encode($value);
+
+			Craft::info(
+				'Attempted to set unsupported legacy part: "' . $name . '" to value "' . $value . '"',
+				'simplemap'
+			);
+			return;
+		}
+
+		parent::__set($name, $value);
 	}
 
 }

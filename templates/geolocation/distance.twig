@@ -1,0 +1,24 @@
+{% extends "_layouts/default" %}
+
+{% block content %}
+    {% set clt = craft.entries.id(23).one %}
+    {% set ral = craft.entries.id(26).one %}
+    {% set geo = geolocation.getCoords() %}
+    <div>Geolocation:
+        {{ geo.lat }}
+        {{ geo.lng }}</div>
+    {% for loc in [clt, ral] %}
+        <div>{{ loc.title }}:
+            <span>lat:
+                {{ loc.mapLocation.lat }}</span>
+            <span>lng:
+                {{ loc.mapLocation.lng }}</span>
+            <span>Distance to me:
+                {{ location.distance(loc) }}</span>
+        </div>
+    {% endfor %}
+    {% set distance = location.distance(clt, ral) %}
+    <div>Distance:
+        {{ distance }}</div>
+
+{% endblock %}

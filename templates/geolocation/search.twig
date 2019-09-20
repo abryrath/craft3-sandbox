@@ -1,0 +1,68 @@
+{% extends "_layouts/default" %}
+
+{% block content %}
+    {# {% import "geolocation/_macros/searchResults" as searchResults %} #}
+    {% macro searchResults(locations) %}
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">element id</th>
+                    <th scope="col">element title</th>
+
+                    <th scope="col">distance</th>
+                    <th scope="col">units</th>
+                    <th scope="col">(lat,lng)</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for result in locations %}
+                    <tr>
+                        <td>{{ result.element.id ?? result.element }}</td>
+                        <td>{{ result.element.title ?? 'n/a' }}</td>
+
+                        <td>{{ result.distance == 0 ? '0' : result.distance }}</td>
+                        <td>{{ result.units }}</td>
+                        <td>({{ result.latLng.lat }},
+                            {{ result.latLng.lng }})</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% endmacro %}
+    {% import _self as searchResults %}
+     {# as "searchResults" %} #}
+
+    <h1>Closest Locations to me (miles, max: 200mi)</h1>
+    {% set query = craft.entries.section('locations') %}
+    {% set locations = location.search(query, null, {
+        prefetchElements: true,
+        radius: 200,
+        sources: ['entries:section:3']
+    }) %}
+    {{ searchResults.searchResults(locations) }}
+
+
+    <hr/>
+    <h1>Closest Entries to me (kilometers, max: 200km)</h1>
+    {% set query = craft.entries %}
+    {% set locations = location.search(query, null, {
+        prefetchElements: true,
+        radius: 200,
+        units: 'km',
+    }) %}
+
+    {{ searchResults.searchResults(locations) }}
+
+    <hr/>
+
+    <h1>Closest Locations to Winston Salem (not prefetching elements)</h1>
+    {% set winston = craft.entries.id(33).one() %}
+    {% set winstonCoords = location.getCoords(winston) %}
+    {% set query = craft.entries.section('locations').limit(10) %}
+    {% set locations = location.search(query, winstonCoords, {
+        radius: 200,
+        entries: [3],
+        prefetchElements: false
+    }) %}
+    {{ searchResults.searchResults(locations) }}
+{% endblock %}

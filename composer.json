@@ -2,17 +2,20 @@
     "require": {
         "vlucas/phpdotenv": "^2.4.0",
         "league/csv": "^8",
-        "ether/simplemap": "3.4.11",
+        "ether/simplemap": "3.6.4.3",
         "craftcms/commerce": "2.1.2",
         "unionco/core": "^3.13",
         "monolog/monolog": "^1.24",
-        "craftcms/cms": "3.3.1.1",
+        "craftcms/cms": "^3.3.0",
         "yiisoft/yii2": "2.0.21.0",
         "craftcms/plugin-installer": "1.5.4",
         "twig/twig": "2.11.2",
         "unionco/craft-sync-db": "@dev",
         "unionco/craft-related-entry-types": "@dev",
-        "unionco/craft-coachmarks": "@dev"
+        "unionco/craft-coachmarks": "@dev",
+        "unionco/craft-autosuggest": "@dev",
+        "unionco/craft-geolocation": "@dev",
+        "unionco/syncdb": "@dev"
     },
     "autoload": {
         "psr-4": {
@@ -52,6 +55,14 @@
         {
             "type": "path",
             "url": "../../Library/craft-cms-coachmarks"
+        },
+        {
+            "type": "path",
+            "url": "../../Library/autosuggest"
+        },
+        {
+            "type": "path",
+            "url": "../../Library/craft-geolocation"
         }
     ],
     "minimum-stability": "dev",

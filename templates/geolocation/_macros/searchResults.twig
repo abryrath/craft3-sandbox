@@ -1,0 +1,26 @@
+{% macro searchResults(locations) %}
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">element id</th>
+            <th scope="col">element title</th>
+            
+            <th scope="col">distance</th>
+            <th scope="col">units</th>
+            <th scope="col">(lat,lng)</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for result in locations %}
+            <tr>
+                <td>{{ result.element.id ?? result.element }}</td>
+                <td>{{ result.element.title ?? 'n/a' }}</td>
+                
+                <td>{{ result.distance == 0 ? '0' : result.distance }}</td>
+                <td>{{ result.units }}</td>
+                <td>({{ result.latLng.lat }}, {{ result.latLng.lng }})</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endmacro %}

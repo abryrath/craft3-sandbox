@@ -16,6 +16,8 @@ use ether\simplemap\enums\GeoService;
 use ether\simplemap\enums\MapTiles;
 use ether\simplemap\fields\MapField as MapField;
 use ether\simplemap\integrations\craftql\GetCraftQLSchema;
+use ether\simplemap\integrations\feedme\FeedMeMaps;
+use ether\simplemap\migrations\m190723_105637_fix_map_field_column_type;
 use ether\simplemap\models\Settings;
 use ether\simplemap\services\MapService;
 use ether\simplemap\web\Variable;
@@ -64,14 +66,21 @@ class SimpleMap extends Plugin
 			[$this, 'onRegisterVariable']
 		);
 
-		/** @noinspection PhpUndefinedNamespaceInspection */
-		/** @noinspection PhpUndefinedClassInspection */
 		if (class_exists(\markhuot\CraftQL\CraftQL::class))
 		{
 			Event::on(
 				MapField::class,
 				'craftQlGetFieldSchema',
 				[new GetCraftQLSchema, 'handle']
+			);
+		}
+
+		if (class_exists(\craft\feedme\Plugin::class))
+		{
+			Event::on(
+				\craft\feedme\services\Fields::class,
+				\craft\feedme\services\Fields::EVENT_REGISTER_FEED_ME_FIELDS,
+				[$this, 'onRegisterFeedMeFields']
 			);
 		}
 	}
@@ -121,6 +130,11 @@ class SimpleMap extends Plugin
 		$variable = $event->sender;
 		$variable->set('simpleMap', Variable::class);
 		$variable->set('maps', Variable::class);
+	}
+
+	public function onRegisterFeedMeFields (\craft\feedme\events\RegisterFeedMeFieldsEvent $event)
+	{
+		$event->fields[] = FeedMeMaps::class;
 	}
 
 	// Helpers

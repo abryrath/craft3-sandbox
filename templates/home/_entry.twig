@@ -1,14 +1,66 @@
 <html>
-<body>
-    {# {% set geolocationService = geolocation.geolocation %}
-    {{ dump(geolocationService.getProvider()) }}
-    {% set myLocation = geolocationService.getCoords('172.72.23.188') %}
-    {{ dump(myLocation) }}
+    <body>
+        {# {% set geolocationService = geolocation.geolocation %}
+                                            {{ dump(geolocationService.getProvider()) }}
+                                            {% set myLocation = geolocationService.getCoords('172.72.23.188') %}
+                                            {{ dump(myLocation) }}
+                                        
+                                            {% set randomLocation = geolocationService.getCoords('xxx') %}
+                                            {{ dump(randomLocation) }}
+                                        
+                                            {{ dump(geolocation.location.distance(myLocation, randomLocation) )}} #}
 
-    {% set randomLocation = geolocationService.getCoords('xxx') %}
-    {{ dump(randomLocation) }}
+        {% import '@autosuggest/autosuggest' as autosuggest %}
 
-    {{ dump(geolocation.location.distance(myLocation, randomLocation) )}} #}
-    Hello, world
-</body>
+        {# <div>
+                                    <strong>Tags</strong>
+                                    {{ autosuggest.display({
+                                        id: 'autosuggest-1',
+                                        sources: {
+                                            tags: {
+                                                ids: [1]
+                                            }
+                                        }
+                                    }) }}
+                                </div>
+                        
+                                <div>
+                                    <strong>Categories</strong>
+                                    {{ autosuggest.display({
+                                        wrapperClass: 'custom-wrapper',
+                                        type: 'styledList',
+                                        id: 'autosuggest-2',
+                                        sources: {
+                                            categories: {
+                                                ids: [1]
+                                            }
+                                        }
+                                    }) }}
+                                </div>
+                        
+                                <div>
+                                    <strong>Tags & Categories</strong>
+                                    {{ autosuggest.display({
+                                        id: 'autosuggest-3',
+                                        type: 'datalist',
+                                        sources: {
+                                            tags: {
+                                                ids: [1]
+                                            },
+                                            categories: {
+                                                ids: [1]
+                                            }
+                                        }
+                                    }) }}
+                                </div> #}
+        <div>
+            {{ autosuggest.demo({ id: 'autosuggest-demo' }) }}
+
+            {% do view.registerAssetBundle('\\unionco\\autosuggest\\assetbundles\\autosuggest\\AutosuggestAsset') %}
+
+
+            <hr/>
+
+        </body>
+    </body>
 </html>

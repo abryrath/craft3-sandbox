@@ -1,0 +1,13 @@
+{% extends "_layouts/default" %}
+
+{% block content %}
+    {% set baseQuery = craft.entries() %}
+    {% set searchResults = location.search(baseQuery, null, {
+        prefetchElements: true,
+        rawQuery: true,
+        siteId: [1,2],
+        entries: [4,5],
+        radius: 50
+    }) %}
+    {{ searchResults|raw }}
+{% endblock %}

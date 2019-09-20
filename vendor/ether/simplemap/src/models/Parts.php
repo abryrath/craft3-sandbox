@@ -10,6 +10,7 @@ namespace ether\simplemap\models;
 
 use craft\helpers\Json;
 use ether\simplemap\enums\GeoService;
+use yii\base\BaseObject;
 
 /**
  * Class Parts
@@ -17,7 +18,7 @@ use ether\simplemap\enums\GeoService;
  * @author  Ether Creative
  * @package ether\simplemap\models
  */
-class Parts
+class Parts extends BaseObject
 {
 
 	// Properties
@@ -49,6 +50,8 @@ class Parts
 
 	public function __construct ($parts = null, string $service = null)
 	{
+		parent::__construct();
+
 		if ($parts === null)
 			return $this;
 
@@ -72,6 +75,11 @@ class Parts
 			default:
 				$this->_fromArray($parts);
 		}
+	}
+
+	public function getStreetAddress ()
+	{
+		return $this->address;
 	}
 
 	// Methods: Private
@@ -162,9 +170,9 @@ class Parts
 	private function _mapbox (array $parts)
 	{
 		$parts = array_reduce(
-			$parts,
+			$parts['context'],
 			function ($a, $part) {
-				$key = explode('.', $part['id'])[0];
+				$key     = explode('.', $part['id'])[0];
 				$a[$key] = $part['text'];
 
 				return $a;
@@ -175,13 +183,13 @@ class Parts
 			]
 		);
 
-		$this->number   = $parts['number'];
-		$this->address  = $parts['address'];
-		$this->city     = $parts['city'];
-		$this->postcode = $parts['postcode'];
-		$this->county   = $parts['county'];
-		$this->state    = $parts['state'];
-		$this->country  = $parts['country'];
+		$this->number   = @$parts['number'];
+		$this->address  = @$parts['address'];
+		$this->city     = @$parts['city'];
+		$this->postcode = @$parts['postcode'];
+		$this->county   = @$parts['county'];
+		$this->state    = @$parts['state'];
+		$this->country  = @$parts['country'];
 	}
 
 	/**
@@ -209,13 +217,13 @@ class Parts
 			if (!array_key_exists($key, $parts))
 				$parts[$key] = '';
 
-		$this->number = $this->_join([
+		$this->number = $parts['number'] ?? $this->_join([
 			$parts['subpremise'],
 			$parts['premise'],
 			$parts['street_number'],
 		]);
 
-		$this->address = $this->_join([
+		$this->address = $parts['address'] ?? $this->_join([
 			$parts['route'],
 			$parts['neighborhood'],
 			$parts['sublocality_level_5'],
@@ -226,14 +234,14 @@ class Parts
 			$parts['sublocality'],
 		]);
 
-		$this->city = $this->_join([
+		$this->city = $parts['city'] ?? $this->_join([
 			$parts['postal_town'],
 			$parts['locality'],
 		]);
 
-		$this->postcode = $parts['postal_code'] ?? $parts['postal_code_prefix'];
-		$this->county = $parts['administrative_area_level_2'];
-		$this->state = $parts['administrative_area_level_1'];
+		$this->postcode = $parts['postcode'] ?? $parts['postal_code'] ?? $parts['postal_code_prefix'];
+		$this->county = $parts['county'] ?? $parts['administrative_area_level_2'];
+		$this->state = $parts['state'] ?? $parts['administrative_area_level_1'];
 		$this->country = $parts['country'];
 	}
 
@@ -325,7 +333,7 @@ class Parts
 	 *
 	 * @return bool
 	 */
-	private function _isAssoc (array $arr)
+	protected function _isAssoc (array $arr)
 	{
 		if ([] === $arr) return false;
 		return array_keys($arr) !== range(0, count($arr) - 1);

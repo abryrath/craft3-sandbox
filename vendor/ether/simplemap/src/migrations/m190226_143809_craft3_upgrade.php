@@ -11,8 +11,8 @@ use craft\validators\HandleValidator;
 use ether\simplemap\enums\GeoService;
 use ether\simplemap\enums\MapTiles;
 use ether\simplemap\models\Settings;
-use ether\simplemap\records\Map;
-use ether\simplemap\elements\Map as MapElement;
+use ether\simplemap\models\Map;
+use ether\simplemap\records\Map as MapRecord;
 use ether\simplemap\fields\MapField;
 use ether\simplemap\SimpleMap;
 
@@ -33,14 +33,13 @@ class m190226_143809_craft3_upgrade extends Migration
      * @inheritdoc
      *
      * @throws \Throwable
-     * @throws \craft\errors\ElementNotFoundException
      * @throws \yii\base\Exception
      * @throws \yii\db\Exception
      */
     public function safeUp()
     {
         // 1. Run the install migration
-	    if (!$this->db->tableExists(Map::TableName))
+	    if (!$this->db->tableExists(MapRecord::OldTableName))
 	        (new Install())->safeUp();
 
 	    // 2. Upgrade the data
@@ -63,14 +62,12 @@ class m190226_143809_craft3_upgrade extends Migration
 	 * Upgrade from Craft 2
 	 *
 	 * @throws \Throwable
-	 * @throws \craft\errors\ElementNotFoundException
 	 * @throws \yii\base\Exception
 	 * @throws \yii\db\Exception
 	 */
     private function _upgrade2 ()
     {
-    	$craft = \Craft::$app;
-    	$elements = $craft->elements;
+    	$mapService = SimpleMap::getInstance()->map;
 
     	// Delete the old plugin row
 	    $this->delete(Table::PLUGINS, ['handle' => 'simple-map']);
@@ -89,18 +86,14 @@ class m190226_143809_craft3_upgrade extends Migration
 
 	    	$site = $this->getSiteByLocale($row['ownerLocale']);
 
-	    	$map = new MapElement([
-			    'ownerId'     => $row['ownerId'],
-			    'ownerSiteId' => $site->id,
-			    'fieldId'     => $row['fieldId'],
-			    'lat'         => $row['lat'],
-			    'lng'         => $row['lng'],
-			    'zoom'        => $row['zoom'] ?? 15,
-			    'address'     => $row['address'],
-			    'parts'       => Json::decodeIfJson($row['parts']),
-		    ]);
+		    $map              = new Map();
+		    $map->ownerId     = $row['ownerId'];
+		    $map->ownerSiteId = $site->id;
+		    $map->fieldId     = $row['fieldId'];
+		    $map->lat         = $row['lat'];
+		    $map->lng         = $row['lng'];
 
-		    $elements->saveElement($map, false);
+		    $mapService->saveRecord($map, true);
 	    }
 
 	    $this->dropTable('{{%simplemap_maps}}');
@@ -149,13 +142,11 @@ class m190226_143809_craft3_upgrade extends Migration
 	 * Upgrade from SimpleMap (3.3.x)
 	 *
 	 * @throws \Throwable
-	 * @throws \craft\errors\ElementNotFoundException
 	 * @throws \yii\base\Exception
 	 */
     private function _upgrade3 ()
     {
-	    $craft    = \Craft::$app;
-	    $elements = $craft->elements;
+	    $mapService = SimpleMap::getInstance()->map;
 
 	    // 1. Store the old data
 	    echo '    > Start map data upgrade' . PHP_EOL;
@@ -171,24 +162,37 @@ class m190226_143809_craft3_upgrade extends Migration
 			    'address',
 			    'parts',
 		    ])
-		    ->from(Map::TableName)
+		    ->from(MapRecord::OldTableName)
 		    ->all();
 
 	    // 2. Re-create the table
-	    $this->dropTable(Map::TableName);
-	    (new Install())->safeUp();
+	    $this->dropTable(MapRecord::OldTableName);
+
+	    if (!$this->db->tableExists(MapRecord::TableName))
+	        (new Install())->safeUpPre34();
 
 	    // 3. Store the old data as new
+	    $dupeKeys = [];
 	    foreach ($rows as $row)
 	    {
+		    $key = $row['ownerId'] . '_' . $row['ownerSiteId'] . '_' . $row['fieldId'];
+
+		    if (in_array($key, $dupeKeys))
+			    continue;
+
+		    $dupeKeys[] = $key;
+
 		    echo '    > Upgrade map value ' . $row['address'] . PHP_EOL;
 
-		    $map = new MapElement($row);
+		    $map              = new Map($row);
+		    $map->ownerId     = $row['ownerId'];
+		    $map->ownerSiteId = $row['ownerSiteId'];
+		    $map->fieldId     = $row['fieldId'];
 
 		    if (!$map->zoom)
 		    	$map->zoom = 15;
 
-		    $elements->saveElement($map, false);
+		    $mapService->saveRecord($map, true);
 	    }
 
 	    // 4. Update field settings
@@ -301,8 +305,8 @@ class m190226_143809_craft3_upgrade extends Migration
 		if (is_array($craft2Settings) && !empty($craft2Settings))
 		{
 			$settings = [
-				'apiKey' => $craft2Settings['browserApiKey'],
-				'unrestrictedApiKey' => $craft2Settings['serverApiKey'],
+				'apiKey' => @$craft2Settings['browserApiKey'] ?: '',
+				'unrestrictedApiKey' => @$craft2Settings['serverApiKey'] ?: '',
 			];
 		}
 
