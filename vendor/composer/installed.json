@@ -4698,10 +4698,16 @@
         "name": "unionco/craft-related-entry-types",
         "version": "dev-master",
         "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/unionco/craft-related-entry-types.git",
+            "reference": "4aa6fb12383af1e79f92662c5bdc71cf93b1b69b"
+        },
         "dist": {
-            "type": "path",
-            "url": "../../Library/relatedentrytypes",
-            "reference": "467b160b34bc0ea864b089f49a3e4d24b0424845"
+            "type": "zip",
+            "url": "https://api.github.com/repos/unionco/craft-related-entry-types/zipball/4aa6fb12383af1e79f92662c5bdc71cf93b1b69b",
+            "reference": "4aa6fb12383af1e79f92662c5bdc71cf93b1b69b",
+            "shasum": ""
         },
         "require": {
             "craftcms/cms": "^3.0.0-RC1"
@@ -4754,7 +4760,7 @@
         "dist": {
             "type": "path",
             "url": "../../Library/craft-sync-db",
-            "reference": "80ced30836ab3cdad0dee11470bfda1c870e0f04"
+            "reference": "28d5953e3f307b1eb3b6b3cfdbbbcfe67b509b24"
         },
         "require": {
             "craftcms/cms": "^3.0.0-RC1",

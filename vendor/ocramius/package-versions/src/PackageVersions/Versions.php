@@ -85,8 +85,8 @@ final class Versions
   'unionco/craft-autosuggest' => '0.0.1@3ded0f66b2ae18644deb0ca65d9599ea061c22a7',
   'unionco/craft-coachmarks' => '1.0.0@48e081bb561e8637170538390127ac5b971a52fa',
   'unionco/craft-geolocation' => 'dev-feature/refactor@eead5268e5ab229d26c35218c08b82f9b2b19427',
-  'unionco/craft-related-entry-types' => 'dev-master@467b160b34bc0ea864b089f49a3e4d24b0424845',
-  'unionco/craft-sync-db' => 'dev-master@80ced30836ab3cdad0dee11470bfda1c870e0f04',
+  'unionco/craft-related-entry-types' => 'dev-master@4aa6fb12383af1e79f92662c5bdc71cf93b1b69b',
+  'unionco/craft-sync-db' => 'dev-master@28d5953e3f307b1eb3b6b3cfdbbbcfe67b509b24',
   'unionco/syncdb' => 'v0.7.1.1@99c02862d8fc2317c295f4e8b718d3763f800ff5',
   'vlucas/phpdotenv' => 'v2.6.1@2a7dcf7e3e02dc5e701004e51a6f304b713107d5',
   'voku/anti-xss' => '4.1.14@53c5da8039cf2ed226e3249b86a2be700c415f88',
@@ -123,7 +123,7 @@ final class Versions
   'vimeo/psalm' => '3.4.10@c283f0877d543e7ab738d231ba6a3cdce5e1039a',
   'webmozart/glob' => '4.1.0@3cbf63d4973cf9d780b93d2da8eec7e4a9e63bbe',
   'webmozart/path-util' => '2.3.0@d939f7edc24c9a1bb9c0dee5cb05d8e859490725',
-  '__root__' => 'dev-master@917c68e2cede73baae8cb1b03e1a782d14c84e43',
+  '__root__' => 'dev-master@b28a96aa2d077e635604dc7ecfc7b5531907786a',
 );
 
     private function __construct()

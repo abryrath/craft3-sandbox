@@ -59,6 +59,22 @@ return array (
     'hasCpSettings' => true,
     'hasCpSection' => false,
   ),
+  'ether/simplemap' => 
+  array (
+    'class' => 'ether\\simplemap\\SimpleMap',
+    'basePath' => $vendorDir . '/ether/simplemap/src',
+    'handle' => 'simplemap',
+    'aliases' => 
+    array (
+      '@ether/simplemap' => $vendorDir . '/ether/simplemap/src',
+    ),
+    'name' => 'Maps',
+    'version' => '3.6.4.3',
+    'schemaVersion' => '3.4.2',
+    'description' => 'A beautifully simple Map field type for Craft CMS 3',
+    'developer' => 'Ether Creative',
+    'developerUrl' => 'https://ethercreative.co.uk',
+  ),
   'unionco/craft-sync-db' => 
   array (
     'class' => 'unionco\\craftsyncdb\\SyncDbPlugin',
@@ -81,21 +97,5 @@ return array (
     array (
       'sync' => 'unionco\\craftsyncdb\\services\\Sync',
     ),
-  ),
-  'ether/simplemap' => 
-  array (
-    'class' => 'ether\\simplemap\\SimpleMap',
-    'basePath' => $vendorDir . '/ether/simplemap/src',
-    'handle' => 'simplemap',
-    'aliases' => 
-    array (
-      '@ether/simplemap' => $vendorDir . '/ether/simplemap/src',
-    ),
-    'name' => 'Maps',
-    'version' => '3.6.4.3',
-    'schemaVersion' => '3.4.2',
-    'description' => 'A beautifully simple Map field type for Craft CMS 3',
-    'developer' => 'Ether Creative',
-    'developerUrl' => 'https://ethercreative.co.uk',
   ),
 );
